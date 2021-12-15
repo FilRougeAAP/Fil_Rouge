@@ -1,0 +1,3 @@
+Creer les t_elt a partir des fichier
+ on regarde chque mots, on calcule sa signature et on creer ou (ajoute si deja creer) au bon t_elt
+ on ajoute les t elt a l'arbre
