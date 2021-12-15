@@ -1,6 +1,6 @@
 PWD=$(shell pwd)
 REP=$(shell basename $(PWD))
-SOURCES=$(shell cat makefile_sources)
+SOURCES=$(shell cat makefile_sources2)
 CIBLE=displayAVL.exe
 CFLAGS=-Wall
 
@@ -14,6 +14,11 @@ $(CIBLE) : $(SOURCES)
 	@echo -n "Production de $(CIBLE)"
 	@echo " à partir des fichiers : $(SOURCES)"
 	gcc $(CFLAGS) $(SOURCES) -o $@
+
+displayAVL.exe: displayAVL.c $(SOURCES)
+	gcc $(CFLAGS) displayAVL.c $(SOURCES) -o $@
+
+main.exe
 
 clean: 
 	@echo "Nettoyage de $(CIBLE)"
