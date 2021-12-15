@@ -6,7 +6,7 @@
 	//#define ELT_CHAR		// un caractère ?
 	//#define ELT_INT		// un entier (choix par défaut) ?
 	//#define ELT_STRING		// une chaîne de caractères ?
-	//#define ELT_STRUCT		// une structure plus complexe ? 
+	#define ELT_STRUCT		// une structure plus complexe ? 
 	/////////////////////////////////////////////////////////////////////////
 
 	//https://stackoverflow.com/questions/2998864/how-to-add-a-or-condition-in-ifdef

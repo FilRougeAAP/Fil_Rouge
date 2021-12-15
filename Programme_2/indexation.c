@@ -19,7 +19,7 @@ int main(int argc, char ** argv) {
 	/////////////////////////////////////////////////////////////////////////
 	/////////////////////////////////////////////////////////////////////////
 
-	/* outputPath = "output_Prog2";
+	outputPath = "output_Prog2";
 	
 	char *filename;
 	
@@ -30,6 +30,8 @@ int main(int argc, char ** argv) {
 	//Ouverture Fichier
 
     FILE *in_file = fopen(filename, "r");
+    int nb_ligne = 0;
+    int ligne_max = atoi(argv[2]);
 
     struct stat sb;
     stat(filename, &sb);
@@ -37,16 +39,25 @@ int main(int argc, char ** argv) {
     char *file_contents = malloc(sb.st_size);
 
     //Ajout des mots à l'arbre
+    
 
-    while (fscanf(in_file, "%[^\n] ", file_contents) != EOF) {
-        insertAVL(&root, file_contents);
+    while (fscanf(in_file, "%[^\n] ", file_contents) != EOF && nb_ligne++ < ligne_max){
+        T_elt temp;
+        temp.size = strlen(file_contents);
+        printf("%s\n", file_contents);
+        temp.signature = (char*) malloc(temp.size*sizeof(char)+1);
+        temp.liste_mots = (char*) malloc(temp.size*sizeof(char)+1);
+        temp.signature = cal_signature(file_contents,temp.size);
+        temp.liste_mots = file_contents;
+        printf("%s\n", file_contents);
+        //insertAVL(&root, temp);
         
     }
 
     fclose(in_file);
-    printAVL(root,0); */
+    printAVL(root,0); 
 
-    char *mot ="coucou";
+    /* char *mot ="coucou";
     int taille = strlen(mot);
     char *sign;
 
@@ -59,8 +70,23 @@ int main(int argc, char ** argv) {
 
     sign2 = cal_signature(mot2, taille2);
 
-    
-   
+    T_elt test1;
+
+    test1.size = taille;
+    test1.signature = sign;
+    test1.liste_mots = mot;
+
+    T_elt test2;
+
+    test2.size = taille2;
+    test2.signature = sign2;
+    test2.liste_mots = mot2;
+
+    printf("%s\n", toString(test2));
+
+    insertAVL(&root, test1);
+    insertAVL(&root, test2);
+    printAVL(root,0); */
 
 
 	return 0;
