@@ -1,0 +1,193 @@
+digraph displayAVL {
+	node [
+		fontname  = "Arial bold" 
+		fontsize  = "14"
+		fontcolor = "red"
+		style     = "rounded, filled"
+		shape     = "record"
+		fillcolor = "grey90"
+		color     = "blue"
+		width     = "2"
+	]
+
+	edge [
+		color     = "blue"
+	]
+
+	HABACUC [label = "{{<g> HABACUC | <d> 0 } | { <g> | <d>}}"];
+	HABACUC:g -> CARINE;
+	CARINE [label = "{{<g> CARINE | <d> -1 } | { <g> | <d>}}"];
+	CARINE:g -> ANDRE;
+	ANDRE [label = "{{<g> ANDRE | <d> -1 } | { <g> | <d>}}"];
+	ANDRE:g -> ALBERT;
+	ALBERT [label = "{{<g> ALBERT | <d> 0 } | { <g> | <d>}}"];
+	ALBERT:g -> ALBAN;
+	ALBAN [label = "{{<g> ALBAN | <d> 0 } | { <g> | <d>}}"];
+	ALBAN [label = "{{<g> ALBAN | <d> 0 }| { <g> NULL | <d> NULL}}"];
+	ALBERT:d -> ALBINE;
+	ALBINE [label = "{{<g> ALBINE | <d> 0 } | { <g> | <d>}}"];
+	ALBINE [label = "{{<g> ALBINE | <d> 0 }| { <g> NULL | <d> NULL}}"];
+	ANDRE:d -> AXEL;
+	AXEL [label = "{{<g> AXEL | <d> 0 } | { <g> | <d>}}"];
+	AXEL:g -> AUGUSTIN;
+	AUGUSTIN [label = "{{<g> AUGUSTIN | <d> 0 } | { <g> | <d>}}"];
+	AUGUSTIN:g -> ANGELINE;
+	ANGELINE [label = "{{<g> ANGELINE | <d> 0 } | { <g> | <d>}}"];
+	ANGELINE [label = "{{<g> ANGELINE | <d> 0 }| { <g> NULL | <d> NULL}}"];
+	AUGUSTIN:d -> AURELIE;
+	AURELIE [label = "{{<g> AURELIE | <d> 0 } | { <g> | <d>}}"];
+	AURELIE [label = "{{<g> AURELIE | <d> 0 }| { <g> NULL | <d> NULL}}"];
+	AXEL:d -> BADER;
+	BADER [label = "{{<g> BADER | <d> -1 } | { <g> | <d>}}"];
+	BADER [label = "{{<g> BADER | <d> -1 }| { <g> NULL | <d> }}"];
+	BADER:d -> BRET;
+	BRET [label = "{{<g> BRET | <d> 0 } | { <g> | <d>}}"];
+	BRET [label = "{{<g> BRET | <d> 0 }| { <g> NULL | <d> NULL}}"];
+	CARINE:d -> FABRICE;
+	FABRICE [label = "{{<g> FABRICE | <d> 1 } | { <g> | <d>}}"];
+	FABRICE:g -> DANIELE;
+	DANIELE [label = "{{<g> DANIELE | <d> -1 } | { <g> | <d>}}"];
+	DANIELE:g -> CHARALAMBOS;
+	CHARALAMBOS [label = "{{<g> CHARALAMBOS | <d> 0 } | { <g> | <d>}}"];
+	CHARALAMBOS:g -> CELESTE;
+	CELESTE [label = "{{<g> CELESTE | <d> 0 } | { <g> | <d>}}"];
+	CELESTE [label = "{{<g> CELESTE | <d> 0 }| { <g> NULL | <d> NULL}}"];
+	CHARALAMBOS:d -> CLAUDINE;
+	CLAUDINE [label = "{{<g> CLAUDINE | <d> 0 } | { <g> | <d>}}"];
+	CLAUDINE [label = "{{<g> CLAUDINE | <d> 0 }| { <g> NULL | <d> NULL}}"];
+	DANIELE:d -> DONAT;
+	DONAT [label = "{{<g> DONAT | <d> 1 } | { <g> | <d>}}"];
+	DONAT:g -> DARIUS;
+	DARIUS [label = "{{<g> DARIUS | <d> -1 } | { <g> | <d>}}"];
+	DARIUS [label = "{{<g> DARIUS | <d> -1 }| { <g> NULL | <d> }}"];
+	DARIUS:d -> DION;
+	DION [label = "{{<g> DION | <d> 0 } | { <g> | <d>}}"];
+	DION [label = "{{<g> DION | <d> 0 }| { <g> NULL | <d> NULL}}"];
+	DONAT:d -> ETIENNE;
+	ETIENNE [label = "{{<g> ETIENNE | <d> 0 } | { <g> | <d>}}"];
+	ETIENNE [label = "{{<g> ETIENNE | <d> 0 }| { <g> NULL | <d> NULL}}"];
+	FABRICE:d -> GASPARD;
+	GASPARD [label = "{{<g> GASPARD | <d> 1 } | { <g> | <d>}}"];
+	GASPARD:g -> FRANCOIS;
+	FRANCOIS [label = "{{<g> FRANCOIS | <d> 0 } | { <g> | <d>}}"];
+	FRANCOIS:g -> FLORE;
+	FLORE [label = "{{<g> FLORE | <d> 0 } | { <g> | <d>}}"];
+	FLORE [label = "{{<g> FLORE | <d> 0 }| { <g> NULL | <d> NULL}}"];
+	FRANCOIS:d -> GARY;
+	GARY [label = "{{<g> GARY | <d> 0 } | { <g> | <d>}}"];
+	GARY [label = "{{<g> GARY | <d> 0 }| { <g> NULL | <d> NULL}}"];
+	GASPARD:d -> GODELIEVE;
+	GODELIEVE [label = "{{<g> GODELIEVE | <d> 0 } | { <g> | <d>}}"];
+	GODELIEVE [label = "{{<g> GODELIEVE | <d> 0 }| { <g> NULL | <d> NULL}}"];
+	HABACUC:d -> NAHOUM;
+	NAHOUM [label = "{{<g> NAHOUM | <d> 0 } | { <g> | <d>}}"];
+	NAHOUM:g -> JOSIANE;
+	JOSIANE [label = "{{<g> JOSIANE | <d> -1 } | { <g> | <d>}}"];
+	JOSIANE:g -> JACQUELINE;
+	JACQUELINE [label = "{{<g> JACQUELINE | <d> 0 } | { <g> | <d>}}"];
+	JACQUELINE:g -> IGNACE;
+	IGNACE [label = "{{<g> IGNACE | <d> 0 } | { <g> | <d>}}"];
+	IGNACE:g -> HAYFA;
+	HAYFA [label = "{{<g> HAYFA | <d> 0 } | { <g> | <d>}}"];
+	HAYFA [label = "{{<g> HAYFA | <d> 0 }| { <g> NULL | <d> NULL}}"];
+	IGNACE:d -> JACOB;
+	JACOB [label = "{{<g> JACOB | <d> 0 } | { <g> | <d>}}"];
+	JACOB [label = "{{<g> JACOB | <d> 0 }| { <g> NULL | <d> NULL}}"];
+	JACQUELINE:d -> JEANNINE;
+	JEANNINE [label = "{{<g> JEANNINE | <d> -1 } | { <g> | <d>}}"];
+	JEANNINE [label = "{{<g> JEANNINE | <d> -1 }| { <g> NULL | <d> }}"];
+	JEANNINE:d -> JOHANN;
+	JOHANN [label = "{{<g> JOHANN | <d> 0 } | { <g> | <d>}}"];
+	JOHANN [label = "{{<g> JOHANN | <d> 0 }| { <g> NULL | <d> NULL}}"];
+	JOSIANE:d -> MARISE;
+	MARISE [label = "{{<g> MARISE | <d> 1 } | { <g> | <d>}}"];
+	MARISE:g -> KATHERINE;
+	KATHERINE [label = "{{<g> KATHERINE | <d> 0 } | { <g> | <d>}}"];
+	KATHERINE:g -> KADIJA;
+	KADIJA [label = "{{<g> KADIJA | <d> -1 } | { <g> | <d>}}"];
+	KADIJA [label = "{{<g> KADIJA | <d> -1 }| { <g> NULL | <d> }}"];
+	KADIJA:d -> KARINE;
+	KARINE [label = "{{<g> KARINE | <d> 0 } | { <g> | <d>}}"];
+	KARINE [label = "{{<g> KARINE | <d> 0 }| { <g> NULL | <d> NULL}}"];
+	KATHERINE:d -> LOUP;
+	LOUP [label = "{{<g> LOUP | <d> 0 } | { <g> | <d>}}"];
+	LOUP:g -> LEONIDE;
+	LEONIDE [label = "{{<g> LEONIDE | <d> 0 } | { <g> | <d>}}"];
+	LEONIDE [label = "{{<g> LEONIDE | <d> 0 }| { <g> NULL | <d> NULL}}"];
+	LOUP:d -> MARIN;
+	MARIN [label = "{{<g> MARIN | <d> 0 } | { <g> | <d>}}"];
+	MARIN [label = "{{<g> MARIN | <d> 0 }| { <g> NULL | <d> NULL}}"];
+	MARISE:d -> MOISE;
+	MOISE [label = "{{<g> MOISE | <d> 0 } | { <g> | <d>}}"];
+	MOISE:g -> MATHILDE;
+	MATHILDE [label = "{{<g> MATHILDE | <d> 0 } | { <g> | <d>}}"];
+	MATHILDE [label = "{{<g> MATHILDE | <d> 0 }| { <g> NULL | <d> NULL}}"];
+	MOISE:d -> MYRIAM;
+	MYRIAM [label = "{{<g> MYRIAM | <d> 0 } | { <g> | <d>}}"];
+	MYRIAM [label = "{{<g> MYRIAM | <d> 0 }| { <g> NULL | <d> NULL}}"];
+	NAHOUM:d -> REGANE;
+	REGANE [label = "{{<g> REGANE | <d> 0 } | { <g> | <d>}}"];
+	REGANE:g -> PHILARETE;
+	PHILARETE [label = "{{<g> PHILARETE | <d> 0 } | { <g> | <d>}}"];
+	PHILARETE:g -> NORDINE;
+	NORDINE [label = "{{<g> NORDINE | <d> 0 } | { <g> | <d>}}"];
+	NORDINE:g -> NAZAIRE;
+	NAZAIRE [label = "{{<g> NAZAIRE | <d> 0 } | { <g> | <d>}}"];
+	NAZAIRE:g -> NATALIE;
+	NATALIE [label = "{{<g> NATALIE | <d> 0 } | { <g> | <d>}}"];
+	NATALIE [label = "{{<g> NATALIE | <d> 0 }| { <g> NULL | <d> NULL}}"];
+	NAZAIRE:d -> NICOLETTE;
+	NICOLETTE [label = "{{<g> NICOLETTE | <d> 0 } | { <g> | <d>}}"];
+	NICOLETTE [label = "{{<g> NICOLETTE | <d> 0 }| { <g> NULL | <d> NULL}}"];
+	NORDINE:d -> OZANNE;
+	OZANNE [label = "{{<g> OZANNE | <d> 0 } | { <g> | <d>}}"];
+	OZANNE:g -> ONFROY;
+	ONFROY [label = "{{<g> ONFROY | <d> 0 } | { <g> | <d>}}"];
+	ONFROY [label = "{{<g> ONFROY | <d> 0 }| { <g> NULL | <d> NULL}}"];
+	OZANNE:d -> PETRA;
+	PETRA [label = "{{<g> PETRA | <d> 0 } | { <g> | <d>}}"];
+	PETRA [label = "{{<g> PETRA | <d> 0 }| { <g> NULL | <d> NULL}}"];
+	PHILARETE:d -> PIERRICK;
+	PIERRICK [label = "{{<g> PIERRICK | <d> -1 } | { <g> | <d>}}"];
+	PIERRICK:g -> PHILBERT;
+	PHILBERT [label = "{{<g> PHILBERT | <d> 0 } | { <g> | <d>}}"];
+	PHILBERT [label = "{{<g> PHILBERT | <d> 0 }| { <g> NULL | <d> NULL}}"];
+	PIERRICK:d -> PONS;
+	PONS [label = "{{<g> PONS | <d> -1 } | { <g> | <d>}}"];
+	PONS [label = "{{<g> PONS | <d> -1 }| { <g> NULL | <d> }}"];
+	PONS:d -> PROCLUS;
+	PROCLUS [label = "{{<g> PROCLUS | <d> 0 } | { <g> | <d>}}"];
+	PROCLUS [label = "{{<g> PROCLUS | <d> 0 }| { <g> NULL | <d> NULL}}"];
+	REGANE:d -> ROSINE;
+	ROSINE [label = "{{<g> ROSINE | <d> 0 } | { <g> | <d>}}"];
+	ROSINE:g -> RICHARD;
+	RICHARD [label = "{{<g> RICHARD | <d> 0 } | { <g> | <d>}}"];
+	RICHARD:g -> REINE;
+	REINE [label = "{{<g> REINE | <d> 1 } | { <g> | <d>}}"];
+	REINE [label = "{{<g> REINE | <d> 1 }| { <g> | <d> NULL}}"];
+	REINE:g -> REGIS;
+	REGIS [label = "{{<g> REGIS | <d> 0 } | { <g> | <d>}}"];
+	REGIS [label = "{{<g> REGIS | <d> 0 }| { <g> NULL | <d> NULL}}"];
+	RICHARD:d -> RODRIGO;
+	RODRIGO [label = "{{<g> RODRIGO | <d> -1 } | { <g> | <d>}}"];
+	RODRIGO [label = "{{<g> RODRIGO | <d> -1 }| { <g> NULL | <d> }}"];
+	RODRIGO:d -> ROLAND;
+	ROLAND [label = "{{<g> ROLAND | <d> 0 } | { <g> | <d>}}"];
+	ROLAND [label = "{{<g> ROLAND | <d> 0 }| { <g> NULL | <d> NULL}}"];
+	ROSINE:d -> VICTOR;
+	VICTOR [label = "{{<g> VICTOR | <d> 0 } | { <g> | <d>}}"];
+	VICTOR:g -> TOM;
+	TOM [label = "{{<g> TOM | <d> 0 } | { <g> | <d>}}"];
+	TOM:g -> SLAVICA;
+	SLAVICA [label = "{{<g> SLAVICA | <d> 0 } | { <g> | <d>}}"];
+	SLAVICA [label = "{{<g> SLAVICA | <d> 0 }| { <g> NULL | <d> NULL}}"];
+	TOM:d -> TOUSSAINT;
+	TOUSSAINT [label = "{{<g> TOUSSAINT | <d> 0 } | { <g> | <d>}}"];
+	TOUSSAINT [label = "{{<g> TOUSSAINT | <d> 0 }| { <g> NULL | <d> NULL}}"];
+	VICTOR:d -> ZACHARIE;
+	ZACHARIE [label = "{{<g> ZACHARIE | <d> 1 } | { <g> | <d>}}"];
+	ZACHARIE [label = "{{<g> ZACHARIE | <d> 1 }| { <g> | <d> NULL}}"];
+	ZACHARIE:g -> YERIM;
+	YERIM [label = "{{<g> YERIM | <d> 0 } | { <g> | <d>}}"];
+	YERIM [label = "{{<g> YERIM | <d> 0 }| { <g> NULL | <d> NULL}}"];
+}

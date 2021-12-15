@@ -16,9 +16,10 @@ $(CIBLE) : $(SOURCES)
 	gcc $(CFLAGS) $(SOURCES) -o $@
 
 displayAVL.exe: displayAVL.c $(SOURCES)
-	gcc $(CFLAGS) displayAVL.c $(SOURCES) -o $@
+	@ gcc $(CFLAGS) displayAVL.c $(SOURCES) -o $@
 
-main.exe
+main.exe: main.c $(SOURCES)
+	@ gcc $(CFLAGS) main.c $(SOURCES) -o $@
 
 clean: 
 	@echo "Nettoyage de $(CIBLE)"
