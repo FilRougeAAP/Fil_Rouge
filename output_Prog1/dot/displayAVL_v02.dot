@@ -14,11 +14,11 @@ digraph displayAVL {
 		color     = "blue"
 	]
 
-	HABACUC [label = "{{<g> HABACUC | <d> 0 } | { <g> | <d>}}"];
-	HABACUC:g -> AXEL;
-	AXEL [label = "{{<g> AXEL | <d> 0 } | { <g> | <d>}}"];
-	AXEL [label = "{{<g> AXEL | <d> 0 }| { <g> NULL | <d> NULL}}"];
-	HABACUC:d -> JEANNINE;
-	JEANNINE [label = "{{<g> JEANNINE | <d> 0 } | { <g> | <d>}}"];
-	JEANNINE [label = "{{<g> JEANNINE | <d> 0 }| { <g> NULL | <d> NULL}}"];
+	"ABDELKADER" [label = "{{<g> ABDELKADER | <d> 0 } | { <g> | <d>}}"];
+	"ABDELKADER":g -> "ABDEL-HAMID";
+	"ABDEL-HAMID" [label = "{{<g> ABDEL-HAMID | <d> 0 } | { <g> | <d>}}"];
+	"ABDEL-HAMID" [label = "{{<g> ABDEL-HAMID | <d> 0 }| { <g> NULL | <d> NULL}}"];
+	"ABDELKADER":d -> "ABDELKRIM";
+	"ABDELKRIM" [label = "{{<g> ABDELKRIM | <d> 0 } | { <g> | <d>}}"];
+	"ABDELKRIM" [label = "{{<g> ABDELKRIM | <d> 0 }| { <g> NULL | <d> NULL}}"];
 }

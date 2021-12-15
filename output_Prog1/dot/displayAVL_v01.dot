@@ -14,9 +14,9 @@ digraph displayAVL {
 		color     = "blue"
 	]
 
-	JEANNINE [label = "{{<g> JEANNINE | <d> 1 } | { <g> | <d>}}"];
-	JEANNINE [label = "{{<g> JEANNINE | <d> 1 }| { <g> | <d> NULL}}"];
-	JEANNINE:g -> HABACUC;
-	HABACUC [label = "{{<g> HABACUC | <d> 0 } | { <g> | <d>}}"];
-	HABACUC [label = "{{<g> HABACUC | <d> 0 }| { <g> NULL | <d> NULL}}"];
+	"ABDEL-HAMID" [label = "{{<g> ABDEL-HAMID | <d> -1 } | { <g> | <d>}}"];
+	"ABDEL-HAMID" [label = "{{<g> ABDEL-HAMID | <d> -1 }| { <g> NULL | <d> }}"];
+	"ABDEL-HAMID":d -> "ABDELKADER";
+	"ABDELKADER" [label = "{{<g> ABDELKADER | <d> 0 } | { <g> | <d>}}"];
+	"ABDELKADER" [label = "{{<g> ABDELKADER | <d> 0 }| { <g> NULL | <d> NULL}}"];
 }
