@@ -23,7 +23,8 @@ typedef enum {
 } T_bal;
 
 typedef struct aNode{
-	T_elt val; // élément contenu dans le noeud 
+	T_elt signature; // élément contenu dans le noeud 
+    T_elt list_mots; 
 	T_bal bal; // facteur de déséquilibre
 	struct aNode *l; // pointeur vers sous-arbre gauche
 	struct aNode *r; // pointeur vers sous-arbre droit 
@@ -40,7 +41,8 @@ static T_avl newNodeAVL(T_elt e) {
 	T_avl nodeAvl;
 	nodeAvl = (T_avlNode*) malloc(sizeof(T_avlNode));
 	CHECK_IF(nodeAvl, NULL,"erreur malloc dans newNode");
-	nodeAvl->val = eltdup(e);
+	nodeAvl->list_mots = eltdup(e);
+	nodeAvl->signature = cal_signature(e, sizeof(e)/sizeof(T_elt));
 	nodeAvl->bal = 0;
 	nodeAvl->l = NULL;
 	nodeAvl->r = NULL;
@@ -50,7 +52,7 @@ static T_avl newNodeAVL(T_elt e) {
 
  
 
-int	insertAVL (T_avlNode ** pRoot, T_elt e) {
+int	insertAVL(T_avlNode ** pRoot, T_elt e) {
 	// ordre de récurrence ? 
 	// cas de base ?
 	// cas général
@@ -154,6 +156,55 @@ static T_avlNode * balanceAVL(T_avlNode * A) {
 	else return A;
 	return NULL; 
 
+}
+
+
+char * cal_signature(char *mot, int taille){
+    char * sign;
+    
+    sign = (char*) malloc(sizeof(mot));
+    memcpy(sign, mot, taille);
+    mergeSort_tab(sign, 0, taille-1); // On ne trie pas le caractère de fin \0
+
+    return sign;
+}
+
+
+     
+
+void mergeSort_tab(char t[], int debut, int fin){
+	int milieu;
+
+	if (debut < fin)
+	{
+		milieu = (debut + fin)/2;
+		mergeSort_tab(t, debut, milieu);
+		mergeSort_tab(t, milieu + 1, fin);
+		fusionner_tab(t, debut, milieu, fin);
+	}
+}
+
+
+void fusionner_tab(char t[], int d, int m, int f){
+	char aux[f - d + 1]; // !! Allocation dynamique sur la pile (standard C99) 
+	int i, j, k;
+	
+
+	memcpy(aux, &t[d], (f - d + 1) * sizeof(char));	// Copie des données à fusionner
+	
+
+	i = 0; j = m - d + 1; k = 0;
+	while (i <= m - d && j <= f - d) {
+		
+		if (aux[i] <= aux[j]) 	{
+			t[d + k++] = aux[i++];	// aux[i] est plus petit : on le place dans t 
+		}
+		else {
+	 		t[d + k++] = aux[j++];	// aux[j] est plus petit : on le place dans t 
+		}
+	}
+	for (; i <= m - d; t[d + k++] = aux[i++]); // le reste du tableau gauche
+	for (; j <= f - d; t[d + k++] = aux[j++]); // le reste du tableau droit
 }
 
 // IDEM pour ABR 

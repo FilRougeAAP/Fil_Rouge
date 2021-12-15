@@ -110,8 +110,12 @@ int eltcmp(T_elt e1, T_elt e2) {
 char * toString(T_elt e) {
 	// on affiche la première case du tableau
 	// On pourrait boucler pour afficher les entiers dans le tableau 
-	 
-	return e.liste_mots;
+	char * a_aff;
+	a_aff = (char*) malloc(sizeof("signa:  \tlist: ")+ sizeof(e.signature)+sizeof(e.liste_mots));
+
+	sprintf(a_aff, "signa: %s\tlist: %s",e.signature, e.liste_mots);
+
+	return a_aff;
 
 	// => On utilise un buffer déclaré comme variable statique !
 	// Dans ce cas, deux appels à toString renverraient la même adresse...

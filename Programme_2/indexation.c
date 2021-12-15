@@ -51,7 +51,17 @@ int main(int argc, char ** argv) {
     char *sign;
 
     sign = cal_signature(mot, taille);
-    printf("%s\n", sign);
+    //printf("%s\n", sign);
+
+    char *mot2 ="bonjou";
+    int taille2 = strlen(mot2);
+    char *sign2;
+
+    sign2 = cal_signature(mot2, taille2);
+
+    
+   
+
 
 	return 0;
 }
