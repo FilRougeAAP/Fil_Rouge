@@ -21,6 +21,10 @@ displayAVL.exe: displayAVL.c $(SOURCES)
 main.exe: main.c $(SOURCES)
 	@ gcc $(CFLAGS) main.c $(SOURCES) -o $@
 
+indexation.exe: indexation.c $(SOURCES)
+	@ gcc $(CFLAGS) indexation.c $(SOURCES) -o $@
+	
+
 clean: 
 	@echo "Nettoyage de $(CIBLE)"
 	@rm -rf $(CIBLE)
