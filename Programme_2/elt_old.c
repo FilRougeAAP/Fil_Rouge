@@ -110,18 +110,19 @@ int eltcmp(T_elt e1, T_elt e2) {
 char * toString(T_elt e) {
 	// on affiche la première case du tableau
 	// On pourrait boucler pour afficher les entiers dans le tableau 
-	 
-	static char buffer[11]; // nbr max de chiffres nécessaires ? 
-	// 2^31 vaut 2147483648...
-	sprintf(buffer, "%d",e.t[0]); 
-	return buffer;
+	char * a_aff;
+	a_aff = (char*) malloc(sizeof("signa:  \tlist: ")+ sizeof(e.signature)+sizeof(e.liste_mots));
+
+	sprintf(a_aff, "signa: %s\tlist: %s",e.signature, e.liste_mots);
+
+	return a_aff;
 
 	// => On utilise un buffer déclaré comme variable statique !
 	// Dans ce cas, deux appels à toString renverraient la même adresse...
 	// Il ne faut pas les utiliser dans le cadre du même appel à la fonction printf
 }
 
-T_elt genElt(void) {
+/*T_elt genElt(void) {
 	T_elt aux; 
 	static int indice = 0; 
 	// On produit un tableau ne contenant qu'une seule case avec une valeur toujours différente 
@@ -129,28 +130,30 @@ T_elt genElt(void) {
 	aux.t = (int *) malloc(sizeof(int)); 
 	aux.t[0] = indice++;
 	return aux;  
-} 
+} */
 
 /*
 	typedef struct {
-		int * t; 	// un tableau 
-		int size; 	// la taille de ce tableau   	
-	} T_elt; 
+		int size;
+		char* signature; 	// signature
+		char* liste_mots; 	// liste des mots   	
+	} T_elt;
 */
 
 T_elt eltdup(T_elt e) {
 	// On duplique le tableau avec memcpy 
 	T_elt aux;
 	aux.size = e.size; 
-	aux.t =   (int *) malloc(e.size * sizeof(int)); // t est un tableau d'entiers...
-	memcpy(aux.t, e.t, e.size * sizeof(int));
+	aux.signature = (char *) malloc(e.size * sizeof(char)); // signature est un tableau de caractères...
+	memcpy(aux.signature, e.signature, e.size * sizeof(char));
+	memcpy(aux.liste_mots, e.liste_mots, sizeof(e.liste_mots));
 	return aux; 
 } 
 
 int eltcmp(T_elt e1, T_elt e2) {
 	// On renvoie la différence entre les premières cases de chaque tableau 
 	// Il faudrait continuer avec les cases suivantes en cas d'égalité... 
- 	return e1.t[0] - e2.t[0]; 
+ 	return strcmp(e1.signature, e2.signature); 
 }
 #endif
 

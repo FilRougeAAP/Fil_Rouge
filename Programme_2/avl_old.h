@@ -18,8 +18,7 @@ typedef enum {
 } T_bal;
 
 typedef struct aNode{
-	T_elt val; // signature du mot
-    char *list_mots; // liste des mots
+	T_elt val; // élément contenu dans le noeud 
 	T_bal bal; // facteur de déséquilibre
 	struct aNode *l; // pointeur vers sous-arbre gauche
 	struct aNode *r; // pointeur vers sous-arbre droit 
@@ -35,10 +34,6 @@ T_avlNode * searchAVL_rec(T_avl root, T_elt e);
 T_avlNode * searchAVL_it(T_avl root, T_elt e);
 
 void createDotAVL(const T_avl root, const char *basename); 
-
-char * cal_signature(char *mot);
-void mergeSort_tab(char t[], int debut, int fin);
-void fusionner_tab(char t[], int d, int m, int f);
 
 
 

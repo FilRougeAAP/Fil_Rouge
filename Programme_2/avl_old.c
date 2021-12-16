@@ -19,12 +19,11 @@ typedef enum {
     RIGHT = -1,
     BALANCED,
     LEFT,
-    DOUBLE_LEFT 
+    DOUBLE_LEFT
 } T_bal;
 
 typedef struct aNode{
-	T_elt val; // signature du mot
-    char *list_mot; // liste des mots
+	T_elt val; // élément contenu dans le noeud 
 	T_bal bal; // facteur de déséquilibre
 	struct aNode *l; // pointeur vers sous-arbre gauche
 	struct aNode *r; // pointeur vers sous-arbre droit 
@@ -41,8 +40,7 @@ static T_avl newNodeAVL(T_elt e) {
 	T_avl nodeAvl;
 	nodeAvl = (T_avlNode*) malloc(sizeof(T_avlNode));
 	CHECK_IF(nodeAvl, NULL,"erreur malloc dans newNode");
-	nodeAvl->list_mots = eltdup(e);
-	nodeAvl->val = cal_signature(e);
+	nodeAvl->val = eltdup(e);
 	nodeAvl->bal = 0;
 	nodeAvl->l = NULL;
 	nodeAvl->r = NULL;
@@ -56,9 +54,6 @@ int	insertAVL (T_avlNode ** pRoot, T_elt e) {
 	// ordre de récurrence ? 
 	// cas de base ?
 	// cas général
-
-	T_elt sign = cal_signature(e);
-	printf("%s\n", sign);
 	
 	int deltaH=0;
 	if (*pRoot==NULL)
@@ -66,15 +61,7 @@ int	insertAVL (T_avlNode ** pRoot, T_elt e) {
 		*pRoot = newNodeAVL(e);
 		return 1;
 	}
-	else if (eltcmp(sign, (*pRoot)->val)==0)
-	{
-		printf("la\n");
-		T_elt list_mots_old = eltdup((*pRoot)->list_mots);
-		(*pRoot)->list_mots = (T_elt) malloc(sizeof(e)+sizeof(list_mots_old)+sizeof(" \n "));
-		sprintf((*pRoot)->list_mots, "%s\n%s", list_mots_old, toString(e));
-		free(list_mots_old);
-	}
-	else if (eltcmp(sign, (*pRoot)->val)<0)
+	else if (eltcmp(e, (*pRoot)->val)<=0)
 	{
 		deltaH = insertAVL(&(*pRoot)->l, e);
 		(*pRoot)->bal += deltaH;
@@ -169,57 +156,6 @@ static T_avlNode * balanceAVL(T_avlNode * A) {
 
 }
 
-// Calculer la signature
-char * cal_signature(char *mot){
-    char * sign;
-	int taille = strlen(mot);
-    
-    sign = (char*) malloc(sizeof(mot));
-    memcpy(sign, mot, taille);
-    mergeSort_tab(sign, 0, taille-1); // On ne trie pas le caractère de fin \0
-
-    return sign;
-}
-
-
-     
-
-void mergeSort_tab(char t[], int debut, int fin){
-	int milieu;
-
-	if (debut < fin)
-	{
-		milieu = (debut + fin)/2;
-		mergeSort_tab(t, debut, milieu);
-		mergeSort_tab(t, milieu + 1, fin);
-		fusionner_tab(t, debut, milieu, fin);
-	}
-}
-
-
-void fusionner_tab(char t[], int d, int m, int f){
-	char aux[f - d + 1]; // !! Allocation dynamique sur la pile (standard C99) 
-	int i, j, k;
-	
-
-	memcpy(aux, &t[d], (f - d + 1) * sizeof(char));	// Copie des données à fusionner
-	
-
-	i = 0; j = m - d + 1; k = 0;
-	while (i <= m - d && j <= f - d) {
-		
-		if (aux[i] <= aux[j]) 	{
-			t[d + k++] = aux[i++];	// aux[i] est plus petit : on le place dans t 
-		}
-		else {
-	 		t[d + k++] = aux[j++];	// aux[j] est plus petit : on le place dans t 
-		}
-	}
-	for (; i <= m - d; t[d + k++] = aux[i++]); // le reste du tableau gauche
-	for (; j <= f - d; t[d + k++] = aux[j++]); // le reste du tableau droit
-}
-
-
 // IDEM pour ABR 
 
 void printAVL(T_avl root, int indent) {
@@ -235,7 +171,7 @@ void printAVL(T_avl root, int indent) {
 		printAVL(root->r, indent+1);
 		// afficher le noeud racine 
 		for(i=0;i<indent;i++) printf("\t");
-		printf("%s\n", toString(root->list_mots));
+		printf("%s\n", toString(root->val));
 		//printf("desi = %d\n", root->bal);
 		// afficher le sous-arbre gauche avec indentation+1
 		printAVL(root->l, indent+1);
@@ -271,7 +207,7 @@ T_avlNode * searchAVL_rec(T_avl root, T_elt e){
 	// base 
 	if (root== NULL) return NULL; 
 	else {
-		test = eltcmp(cal_signature(e),root->val); 
+		test = eltcmp(e,root->val); 
 		if (test == 0) return root; // trouvé ! 
 		else if (test <= 0) return searchAVL_rec(root->l,e);
 		else return searchAVL_rec(root->r,e);
@@ -283,7 +219,7 @@ T_avlNode * searchAVL_it(T_avl root, T_elt e){
 
 	int test;
 	while(root!=NULL) {	
-		test = eltcmp(cal_signature(e), root->val);
+		test = eltcmp(e,root->val);
 		if (test ==0) return root;
 		else if  (test <= 0) root = root->l; 
 		else root = root->r; 
