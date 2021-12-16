@@ -67,8 +67,7 @@ int	insertAVL (T_avlNode ** pRoot, T_elt e) {
 		return 1;
 	}
 	else if (eltcmp(sign, (*pRoot)->val)==0)
-	{
-		printf("la\n");
+	{		
 		T_elt list_mots_old = eltdup((*pRoot)->list_mots);
 		(*pRoot)->list_mots = (T_elt) malloc(sizeof(e)+sizeof(list_mots_old)+sizeof(" \n "));
 		sprintf((*pRoot)->list_mots, "%s\n%s", list_mots_old, toString(e));

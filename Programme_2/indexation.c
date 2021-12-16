@@ -67,7 +67,8 @@ int main(int argc, char ** argv) {
 
     insertAVL(&root, "oui");
     insertAVL(&root, "non");
-    printAVL(&root, "uio");
+    insertAVL(&root, "uio");
+    insertAVL(&root, "aaa");
     printAVL(root,0);
 
 
