@@ -262,23 +262,21 @@ int nbNodesAVL(T_avl root){
 }
 
 
-T_avlNode * searchAVL_rec(T_avl root, T_elt e){
+T_avlNode * searchAVL_rec(T_avl root, T_elt e, int taille_mots, int *p){
 	// recherche récursive
 
 	// ordre de récurrence : hauteur de l'arbre 	
 	int test; 
-	T_elt sign = cal_signature(e, strlen(e));
-	//printf("%s et %s\n", toString(e), cal_signature(e, strlen(e)));
-	printf("%s\n", root->val);
 
+	(*p)++;
 
 	// base 
 	if (root== NULL) return NULL; 
 	else {
-		test = eltcmp(sign,root->val); 
+		test = eltcmp(cal_signature(e, taille_mots),root->val); 
 		if (test == 0) return root; // trouvé ! 
-		else if (test <= 0) return searchAVL_rec(root->l, e);
-		else return searchAVL_rec(root->r, e);
+		else if (test <= 0) return searchAVL_rec(root->l, e, taille_mots, p);
+		else return searchAVL_rec(root->r, e, taille_mots, p);
 	}
 }
 
