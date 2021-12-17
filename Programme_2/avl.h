@@ -36,7 +36,7 @@ T_avlNode * searchAVL_it(T_avl root, T_elt e);
 
 void createDotAVL(const T_avl root, const char *basename); 
 
-char * cal_signature(char *mot);
+T_elt cal_signature(T_elt mot, int taille_mots);
 void mergeSort_tab(char t[], int debut, int fin);
 void fusionner_tab(char t[], int d, int m, int f);
 

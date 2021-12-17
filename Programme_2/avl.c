@@ -31,18 +31,18 @@ typedef struct aNode{
 } T_avlNode, *T_avl;
 */
 
-static T_avl newNodeAVL(T_elt e); 
+static T_avl newNodeAVL(T_elt e, int taille_mots); 
 static T_avlNode * rotateLeftAVL (T_avlNode * A); 
 static T_avlNode * rotateRightAVL (T_avlNode * B);
 static T_avlNode * balanceAVL(T_avlNode * A);
 
-static T_avl newNodeAVL(T_elt e) {
+static T_avl newNodeAVL(T_elt e, int taille_mots) {
 
 	T_avl nodeAvl;
 	nodeAvl = (T_avlNode*) malloc(sizeof(T_avlNode));
 	CHECK_IF(nodeAvl, NULL,"erreur malloc dans newNode");
 	nodeAvl->list_mots = eltdup(e);
-	nodeAvl->val = cal_signature(e);
+	nodeAvl->val = cal_signature(e, taille_mots);
 	nodeAvl->bal = 0;
 	nodeAvl->l = NULL;
 	nodeAvl->r = NULL;
@@ -57,13 +57,12 @@ int	insertAVL (T_avlNode ** pRoot, T_elt e, int taille_mots) {
 	// cas de base ?
 	// cas général
 
-	T_elt sign = cal_signature(e);
-	//printf("%s\n", sign);
+	T_elt sign = cal_signature(e, taille_mots);
 	
 	int deltaH=0;
 	if (*pRoot==NULL)
 	{
-		*pRoot = newNodeAVL(e);
+		*pRoot = newNodeAVL(e, taille_mots);
 		return 1;
 	}
 	else if (eltcmp(sign, (*pRoot)->val)==0)
@@ -170,13 +169,12 @@ static T_avlNode * balanceAVL(T_avlNode * A) {
 }
 
 // Calculer la signature
-char * cal_signature(char *mot){
+T_elt cal_signature(T_elt mot, int taille_mots){
     char * sign;
-	int taille = strlen(mot);
-    
-    sign = (char*) malloc(sizeof(mot));
-    memcpy(sign, mot, taille);
-    mergeSort_tab(sign, 0, taille-1); // On ne trie pas le caractère de fin \0
+	
+    sign = (char*) malloc(sizeof(char*)*taille_mots);
+    memcpy(sign, mot, taille_mots);
+    mergeSort_tab(sign, 0, taille_mots-1); // On ne trie pas le caractère de fin \0
 
     return sign;
 }
@@ -236,6 +234,8 @@ void printAVL(T_avl root, int indent) {
 		// afficher le noeud racine
 		for(i=0;i<indent;i++) printf("\t");
 		printf("%s\n", toString(root->list_mots));
+		for(i=0;i<indent;i++) printf("\t");
+		printf("sign %s\n", toString(root->val));
 		//printf("desi = %d\n", root->bal);
 		// afficher le sous-arbre gauche avec indentation+1
 		printAVL(root->l, indent+1);
@@ -267,14 +267,18 @@ T_avlNode * searchAVL_rec(T_avl root, T_elt e){
 
 	// ordre de récurrence : hauteur de l'arbre 	
 	int test; 
+	T_elt sign = cal_signature(e, strlen(e));
+	//printf("%s et %s\n", toString(e), cal_signature(e, strlen(e)));
+	printf("%s\n", root->val);
+
 
 	// base 
 	if (root== NULL) return NULL; 
 	else {
-		test = eltcmp(cal_signature(e),root->val); 
+		test = eltcmp(sign,root->val); 
 		if (test == 0) return root; // trouvé ! 
-		else if (test <= 0) return searchAVL_rec(root->l,e);
-		else return searchAVL_rec(root->r,e);
+		else if (test <= 0) return searchAVL_rec(root->l, e);
+		else return searchAVL_rec(root->r, e);
 	}
 }
 
@@ -283,7 +287,7 @@ T_avlNode * searchAVL_it(T_avl root, T_elt e){
 
 	int test;
 	while(root!=NULL) {	
-		test = eltcmp(cal_signature(e), root->val);
+		test = eltcmp(cal_signature(e, strlen(e)), root->val);
 		if (test ==0) return root;
 		else if  (test <= 0) root = root->l; 
 		else root = root->r; 
