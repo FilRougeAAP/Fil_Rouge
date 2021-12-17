@@ -27,7 +27,7 @@ typedef struct aNode{
 
 extern char * outputPath;
 
-int	insertAVL (T_avlNode ** root, T_elt e);
+int	insertAVL (T_avlNode ** root, T_elt e, int taille_mots);
 void printAVL(T_avl root, int indent); 
 int heightAVL(T_avl);
 int nbNodesAVL(T_avl);

@@ -52,7 +52,7 @@ static T_avl newNodeAVL(T_elt e) {
 
  
 
-int	insertAVL (T_avlNode ** pRoot, T_elt e) {
+int	insertAVL (T_avlNode ** pRoot, T_elt e, int taille_mots) {
 	// ordre de récurrence ? 
 	// cas de base ?
 	// cas général
@@ -68,19 +68,20 @@ int	insertAVL (T_avlNode ** pRoot, T_elt e) {
 	}
 	else if (eltcmp(sign, (*pRoot)->val)==0)
 	{		
-		T_elt list_mots_old = eltdup((*pRoot)->list_mots);
-		(*pRoot)->list_mots = (T_elt) malloc(sizeof(e)+sizeof(list_mots_old)+sizeof(" , "));
-		sprintf((*pRoot)->list_mots, "%s, %s", list_mots_old, toString(e));
-		free(list_mots_old);
+		
+		(*pRoot)->list_mots = (T_elt) realloc((*pRoot)->list_mots, sizeof(char*)*(strlen((*pRoot)->list_mots)+taille_mots+2)); // Le 2 correspond à la longueur de ", "
+		//printf("%d\n", sizeof(char*)*(taille_mots+3));
+		strcat(strcat((*pRoot)->list_mots, ", "), toString(e));
+		
 	}
 	else if (eltcmp(sign, (*pRoot)->val)<0)
 	{
-		deltaH = insertAVL(&(*pRoot)->l, e);
+		deltaH = insertAVL(&(*pRoot)->l, e, taille_mots);
 		(*pRoot)->bal += deltaH;
 	}
 	else 
 	{
-		deltaH = insertAVL(&(*pRoot)->r, e);
+		deltaH = insertAVL(&(*pRoot)->r, e, taille_mots);
 		(*pRoot)->bal -= deltaH;
 	}
 	

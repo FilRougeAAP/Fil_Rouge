@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <assert.h>
 #include <sys/stat.h>
 
@@ -30,8 +31,6 @@ int main(int argc, char ** argv) {
 	//Ouverture Fichier
 
     FILE *in_file = fopen(filename, "r");
-    int nb_ligne = 0;
-    int ligne_max = atoi(argv[2]);
 
     struct stat sb;
     stat(filename, &sb);
@@ -41,11 +40,17 @@ int main(int argc, char ** argv) {
     //Initialisation paramètres à afficher
     long int compteur_mots =0;
     int taille_mots=strlen(file_contents);
-    //Ajout des mots à l'arbre
-       
 
-    while (fscanf(in_file, "%[^\n] ", file_contents) != EOF && nb_ligne++ < ligne_max){
-        insertAVL(&root, file_contents);
+
+    //Ajout des mots à l'arbre
+    
+    fscanf(in_file, "%[^\n] ", file_contents);
+    insertAVL(&root, file_contents, taille_mots);
+    
+    taille_mots = strlen(file_contents);
+
+    while (fscanf(in_file, "%[^\n] ", file_contents) != EOF){
+        insertAVL(&root, file_contents, taille_mots);
         compteur_mots++;
 
         
@@ -56,6 +61,10 @@ int main(int argc, char ** argv) {
     printf("Taille des mots : %d\nNombre de mots: %ld\n", taille_mots, compteur_mots);
     
 
+
+  
+    //printf("%s et %d\n", file_contents, strlen(file_contents)* sizeof(char*));
+  
     
 
 	return 0;
