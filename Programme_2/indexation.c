@@ -19,7 +19,7 @@ int main(int argc, char ** argv) {
 	/////////////////////////////////////////////////////////////////////////
 	/////////////////////////////////////////////////////////////////////////
 
-	/* outputPath = "output_Prog2";
+	//outputPath = "output_Prog2";
 	
 	char *filename;
 	
@@ -38,39 +38,25 @@ int main(int argc, char ** argv) {
 
     char *file_contents = malloc(sb.st_size);
 
+    //Initialisation paramètres à afficher
+    long int compteur_mots =0;
+    int taille_mots=strlen(file_contents);
     //Ajout des mots à l'arbre
-    
+       
 
     while (fscanf(in_file, "%[^\n] ", file_contents) != EOF && nb_ligne++ < ligne_max){
-        //insertAVL(&root, temp);
+        insertAVL(&root, file_contents);
+        compteur_mots++;
+
         
     }
 
     fclose(in_file);
-    printAVL(root,0); 
-    printf("oui"); */
+    //printAVL(root,0); 
+    printf("Taille des mots : %d\nNombre de mots: %ld\n", taille_mots, compteur_mots);
+    
 
-    char *mot ="coucou";
-    int taille = strlen(mot);
-    char *sign;
-    printf("%s\n", mot);
-
-    sign = cal_signature(mot);
-    printf("%s\n", mot);
-    printf("%s\n", sign);
-
-    T_elt test;
-    test = (T_elt) malloc(sizeof(char*)*20);
-    sprintf(test, "%s \n%s", "aaaa", "bbbb");
-    sprintf(test, "%s \n%s", "cccc", "dddd");
-    printf("%s\n", test);
-
-    insertAVL(&root, "oui");
-    insertAVL(&root, "non");
-    insertAVL(&root, "uio");
-    insertAVL(&root, "aaa");
-    printAVL(root,0);
-
+    
 
 	return 0;
 }

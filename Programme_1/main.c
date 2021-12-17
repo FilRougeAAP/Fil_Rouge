@@ -2,7 +2,7 @@
 #include <assert.h>
 
 //#define CLEAR2CONTINUE
-#include "include/traces.h" 
+#include "../include/traces.h" 
 
 // C'est dans le fichier elt.h qu'on doit choisir l'implémentation des T_elt
 #include "elt.h"

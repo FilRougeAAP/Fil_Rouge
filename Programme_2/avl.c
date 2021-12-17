@@ -58,7 +58,7 @@ int	insertAVL (T_avlNode ** pRoot, T_elt e) {
 	// cas général
 
 	T_elt sign = cal_signature(e);
-	printf("%s\n", sign);
+	//printf("%s\n", sign);
 	
 	int deltaH=0;
 	if (*pRoot==NULL)
@@ -69,8 +69,8 @@ int	insertAVL (T_avlNode ** pRoot, T_elt e) {
 	else if (eltcmp(sign, (*pRoot)->val)==0)
 	{		
 		T_elt list_mots_old = eltdup((*pRoot)->list_mots);
-		(*pRoot)->list_mots = (T_elt) malloc(sizeof(e)+sizeof(list_mots_old)+sizeof(" \n "));
-		sprintf((*pRoot)->list_mots, "%s\n%s", list_mots_old, toString(e));
+		(*pRoot)->list_mots = (T_elt) malloc(sizeof(e)+sizeof(list_mots_old)+sizeof(" , "));
+		sprintf((*pRoot)->list_mots, "%s, %s", list_mots_old, toString(e));
 		free(list_mots_old);
 	}
 	else if (eltcmp(sign, (*pRoot)->val)<0)
@@ -232,7 +232,7 @@ void printAVL(T_avl root, int indent) {
 		
 		// afficher le sous-arbre droit avec indentation+1
 		printAVL(root->r, indent+1);
-		// afficher le noeud racine 
+		// afficher le noeud racine
 		for(i=0;i<indent;i++) printf("\t");
 		printf("%s\n", toString(root->list_mots));
 		//printf("desi = %d\n", root->bal);
