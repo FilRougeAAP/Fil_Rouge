@@ -18,20 +18,12 @@
 
 int main(int argc, char ** argv) {
 	T_avl root = NULL; 
-	
 
-    
-	/////////////////////////////////////////////////////////////////////////
-	/////////////////////////////////////////////////////////////////////////
-
-	
+	//Ouverture Fichier
 	char *filename;
 	
 	filename = malloc(sizeof(filename));
 	sprintf(filename, "%s",argv[1]); 
-    
-
-	//Ouverture Fichier
 
     FILE *in_file = fopen(filename, "r");
 
@@ -40,42 +32,44 @@ int main(int argc, char ** argv) {
 
     char *file_contents = malloc(sb.st_size);
 
-    //Initialisation paramètres à afficher
-    long int compteur_mots =0;
+    //Paramètres dictionnaire
     int taille_mots=0;
     
 
     //Ajout des mots à l'arbre
     
-    fscanf(in_file, "%[^\n] ", file_contents);
+    fscanf(in_file, "%[^\n] ", file_contents); // On récupère le premier indépendamment pour pouvoir déterminer la taille des mots
     taille_mots = strlen(file_contents);
     
     insertAVL(&root, file_contents, taille_mots);
     
     
     while (fscanf(in_file, "%[^\n] ", file_contents) != EOF ){
-        insertAVL(&root, file_contents, taille_mots);
-        compteur_mots++;
+        insertAVL(&root, file_contents, taille_mots); // On insère chaque mot
     }    
-
-
 
     fclose(in_file);
     
-  
-    //printAVL(root,0);
+    /*
+        A cet instant le dictionnaire est crée
 
+        On commence alors à récupérer les anagrammes :
+        On va stocker les anagrammes dans un fichier, pour ne pas avoir a reparcourir l'arbre pour les afficher
+    */
 
+    // Ouverture fichier stockage
     FILE *fichier = fopen("Liste_anagrammes.txt", "w");
     int nombre_anagrammes=0;
     
-
+    // Comptage du nombre d'anagramme en les ajoutant au fichier de stockage
     nombre_anagrammes = nb_anagramme(root, taille_mots, fichier);
     printf("%d\n", nombre_anagrammes);
    
     fclose(fichier);
+    freeAVL(root); // On a plus besoin de l'arbre, on libère la mémoire
     
 
+    // Affichage des anagrammes, pour cela on les stock temporairement dans une liste chaînée dynamique
     FILE *fichier_lec = fopen("Liste_anagrammes.txt", "r");
     T_list list_anag = NULL;
 
@@ -83,78 +77,35 @@ int main(int argc, char ** argv) {
     stat("Liste_anagrammes.txt", &sb_lec);
     T_elt lignes = malloc(sb_lec.st_size);
 
-    
 
     while (fscanf(fichier_lec, "%[^\n] ", lignes) != EOF){
-        list_anag = addNode(lignes, list_anag);
+        list_anag = addNode(lignes, list_anag); // On récupère chaque mot avec son / ses anagrammes
     }   
-
-    
-    
-
 	 
 	
-	mergesort(&list_anag); 
-	printf("Listes anagrammes:\n"); showList_inv_rec(list_anag);
-
+	mergesort(&list_anag); // On trie la liste en fonction de la la longueur des listes à l'intérieur en ordre décroissant
+	printf("Listes anagrammes:\n"); showList(list_anag); // On affiche la liste par le début 
+    
+    
+    freeList(list_anag); //Libération mémoire
     fclose(fichier_lec);
 
 	return 0;
 }
 
 
-// un mot possede 2 au moins anagrammes si la liste de mots dans la cellule d'un mot est plus grande que la taille d'un mot
-// nb_anna renvoie le nombre de mot possede ana et ajoute dans un fichier les ana
-
-
 int nb_anagramme(T_avl root, int taille_mots, FILE *fp){
     int compteur = 0; // Vaut 0 si pas d'anagramme pour cette maille et 1 si il y a des anagrammes
 
     if (root!=NULL){
-        if (strlen(root->list_mots)>taille_mots){
-            compteur++;
-            fprintf(fp, "%s\n", root->list_mots);
+        if (strlen(root->list_mots)>taille_mots){ // On regarde si la liste de mots de maille contient plus d'un mot
+            compteur++; //Si c'est le cas, c'est que c'est qu'il y a des anagrammes de ce mot
+            fprintf(fp, "%s\n", root->list_mots); // On ajoute les anagrammes au fichier de stockage
         }
 
-    return compteur + nb_anagramme(root->l, taille_mots, fp) + nb_anagramme(root->r, taille_mots, fp);
+    return compteur + nb_anagramme(root->l, taille_mots, fp) + nb_anagramme(root->r, taille_mots, fp); // Compte le nombre de mots du dictionnaire disposant d’anagrammes
 
     }
 
     return 0;
-}
-
-
-void mergeSort_tab_str(char* t[], int debut, int fin){
-	int milieu;
-
-	if (debut < fin)
-	{
-		milieu = (debut + fin)/2;
-		mergeSort_tab_str(t, debut, milieu);
-		mergeSort_tab_str(t, milieu + 1, fin);
-		fusionner_tab_str(t, debut, milieu, fin);
-	}
-}
-
-
-void fusionner_tab_str(char* t[], int d, int m, int f){
-	char* aux[f - d + 1]; // !! Allocation dynamique sur la pile (standard C99) 
-	int i, j, k;
-	
-
-	memcpy(aux, &t[d], (f - d + 1) * sizeof(char*));	// Copie des données à fusionner
-	
-
-	i = 0; j = m - d + 1; k = 0;
-	while (i <= m - d && j <= f - d) {
-		
-		if (eltcmp(aux[i],  aux[j])) 	{
-			t[d + k++] = aux[i++];	// aux[i] est plus petit : on le place dans t 
-		}
-		else {
-	 		t[d + k++] = aux[j++];	// aux[j] est plus petit : on le place dans t 
-		}
-	}
-	for (; i <= m - d; t[d + k++] = aux[i++]); // le reste du tableau gauche
-	for (; j <= f - d; t[d + k++] = aux[j++]); // le reste du tableau droit
 }

@@ -20,13 +20,12 @@ int main(int argc, char ** argv) {
 
 	outputPath = "output_Prog1";
 	
+    //Ouverture Fichier
 	char *filename;
 	
 	filename = malloc(sizeof(filename));
 	sprintf(filename, "%s",argv[1]); 
     
-
-	//Ouverture Fichier
 
     FILE *in_file = fopen(filename, "r");
     int nb_ligne = 0;
@@ -37,14 +36,16 @@ int main(int argc, char ** argv) {
 
     char *file_contents = malloc(sb.st_size);
 
+    // Ajout des mots et création du fichier graphique
     while (fscanf(in_file, "%[^\n] ", file_contents) != EOF && nb_ligne++ < ligne_max) {
-        insertAVL(&root, file_contents);
+        insertAVL(&root, file_contents); 
         createDotAVL(root, "displayAVL");
         
     }
 
     fclose(in_file);
     printAVL(root,0);
+    freeAVL(root);
 
 	return 0;
 }

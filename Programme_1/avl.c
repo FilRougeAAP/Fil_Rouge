@@ -58,102 +58,111 @@ int	insertAVL (T_avlNode ** pRoot, T_elt e) {
 	int deltaH=0;
 	if (*pRoot==NULL)
 	{
-		*pRoot = newNodeAVL(e);
-		return 1;
+		*pRoot = newNodeAVL(e); // Ajout d'une nouvelle maille
+		return 1;				// Modification de hauteur : on renvoie 1
 	}
 	else if (eltcmp(e, (*pRoot)->val)<=0)
 	{
-		deltaH = insertAVL(&(*pRoot)->l, e);
-		(*pRoot)->bal += deltaH;
+		deltaH = insertAVL(&(*pRoot)->l, e);	// insertion dans sous-arbre gauche
+		(*pRoot)->bal += deltaH;				// mise à jour du facteur de déséquilibre
 	}
 	else 
 	{
-		deltaH = insertAVL(&(*pRoot)->r, e);
-		(*pRoot)->bal -= deltaH;
+		deltaH = insertAVL(&(*pRoot)->r, e);	// insertion dans sous-arbre droit
+		(*pRoot)->bal -= deltaH;				// mise à jour du facteur de déséquilibre
 	}
 	
 
-	if (deltaH==0) return 0;
-	else 
+	if (deltaH == 0)
+		return 0; // pas de modification de hauteur : on renvoie 0
+	else		  // le sous-arbre renvoyé par l’appel récursif a grandi
 	{
-		*pRoot = balanceAVL(*pRoot);
+		*pRoot = balanceAVL(*pRoot); // on rééquilibre
 	}
 
-	if ((*pRoot)->bal != 0) return 1;
-	else return 0;
-	
+	if ((*pRoot)->bal != 0)
+		return 1; // Si l'arbre n'est pas rééquilibré, on renvoie 1 pour qu'il soit lors de l'appel récursif
+	else
+		return 0;
+
 }
 
 
-
-
-static T_avlNode * rotateLeftAVL (T_avlNode * B) {
+static T_avlNode *rotateLeftAVL(T_avlNode *B)
+{
 	// rotation gauche
 
-	T_avlNode * A;
+	T_avlNode *A;
 	T_bal a, b;
 
 	A = B->r;
 
-	a = A->bal;
-	b = B->bal; 
+	a = A->bal; // On récupère les facteurs de déséquilibre avant rotation
+	b = B->bal;
 
-	
-	B->r = A->l;
+	B->r = A->l; // Rotation simple à gauche
 	A->l = B;
 
-	B->bal = 1 + b - MIN2(0,a);
-	A->bal = 1 + a + MAX2(B->bal,0); 
-	
+	B->bal = 1 + b - MIN2(0, a); // Mise à jour des facteurs de déséquilibre
+	A->bal = 1 + a + MAX2(B->bal, 0);
 
-	return A; 
+	return A;
 }
 
 
-static T_avlNode * rotateRightAVL (T_avlNode * A) {
+static T_avlNode *rotateRightAVL(T_avlNode *A)
+{
 	// rotation droite
 	T_avlNode *B;
 	T_bal a, b;
 
 	B = A->l;
 
-	a = A->bal;
-	b = B->bal; 
-	
-	A->l = B->r;
+	a = A->bal;	// On récupère les facteurs de déséquilibre avant rotation
+	b = B->bal;
+
+	A->l = B->r; // Rotation simple à droite
 	B->r = A;
 
-	A->bal = a - 1 - MAX2(0,b); 
-	B->bal = b -1 + MIN2(0, A->bal);  
+	A->bal = a - 1 - MAX2(0, b);	// Mise à jour des facteurs de déséquilibre
+	B->bal = b - 1 + MIN2(0, A->bal);
 
 	return B;
 }
- // ∆ = h(G) - h(D)●-1 ⇔ penche à droite●0 ⇔ équilibre●1 ⇔ penche à gauche
 
-static T_avlNode * balanceAVL(T_avlNode * A) {
+ /*  
+	A->bal 	< 0 \Leftrightarrow arbre penche à droite;
+		 	= 0 \Leftrightarrow arbre équilibré 
+			> 0 \Leftrightarrow arbre penche à gauche
+*/
+
+static T_avlNode *balanceAVL(T_avlNode *A)
+{
 	// rééquilibrage de A
 
-	if (A->bal == 2)
+	if (A->bal == 2) // Penche à gauche
 	{
-		if (A->l->bal <= 0)
+		if (A->l->bal <= 0) // Penche à droite
 		{
-			A->l=rotateLeftAVL(A->l);
-			return rotateRightAVL(A);
+			A->l = rotateLeftAVL(A->l); // Rotation double : 
+			return rotateRightAVL(A);	// Gauche puis droite
 		}
-		else return rotateRightAVL(A);
-	} 
-	else if (A->bal == -2)
-	{
-		if (A->r->bal >= 0)
-		{
-			A->r=rotateRightAVL(A->r);
-			return rotateLeftAVL(A);
-		}
-		else return rotateLeftAVL(A);
+		else				// Si ne penche pas
+			return rotateRightAVL(A);	// Rotation simple à droite
 	}
-	else return A;
-	return NULL; 
-
+	else if (A->bal == -2)	// Penche à droite
+	{
+		if (A->r->bal >= 0) // Penche à gauche
+		{
+			A->r = rotateRightAVL(A->r); 	// Rotation double : 
+			return rotateLeftAVL(A);		// Droite puis Gauche  
+		}
+		else				// Si ne penche pas
+			return rotateLeftAVL(A);	// Rotation simple à gauche
+	}
+	else
+		return A;
+	return NULL;
 }
 
 // IDEM pour ABR 
@@ -177,6 +186,21 @@ void printAVL(T_avl root, int indent) {
 		printAVL(root->l, indent+1);
 	}
 }
+
+
+void freeAVL(T_avl root)
+{
+	// Libérer la mémoire de toutes les mailles de l'arbre
+
+	if (root != NULL)
+	{
+		freeAVL(root->r);
+		freeAVL(root->l);
+		// printf("Libération de %s\n", root->list_mots);
+		free(root);
+	}
+}
+
 
 int heightAVL(T_avl root){
 	// hauteur d'un arbre 
@@ -204,7 +228,6 @@ T_avlNode * searchAVL_rec(T_avl root, T_elt e){
 	// ordre de récurrence : hauteur de l'arbre 	
 	int test; 
 
-	// base 
 	if (root== NULL) return NULL; 
 	else {
 		test = eltcmp(e,root->val); 
@@ -214,20 +237,7 @@ T_avlNode * searchAVL_rec(T_avl root, T_elt e){
 	}
 }
 
-T_avlNode * searchAVL_it(T_avl root, T_elt e){
-	// recherche itérative
 
-	int test;
-	while(root!=NULL) {	
-		test = eltcmp(e,root->val);
-		if (test ==0) return root;
-		else if  (test <= 0) root = root->l; 
-		else root = root->r; 
-	}
-
-	// pas trouvé (ou vide)
-	return NULL;  
-}
 
 
 static void  genDotAVL(T_avl root, FILE *fp) {

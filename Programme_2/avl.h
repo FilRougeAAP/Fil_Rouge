@@ -29,12 +29,12 @@ extern char * outputPath;
 
 int	insertAVL (T_avlNode ** root, T_elt e, int taille_mots);
 void printAVL(T_avl root, int indent); 
+void freeAVL(T_avl root);
 int heightAVL(T_avl);
 int nbNodesAVL(T_avl);
 T_avlNode * searchAVL_rec(T_avl root, T_elt e,  int taille_mots, int *p);
 T_avlNode * searchAVL_it(T_avl root, T_elt e);
-
-void createDotAVL(const T_avl root, const char *basename); 
+ 
 
 T_elt cal_signature(T_elt mot, int taille_mots);
 void mergeSort_tab(char t[], int debut, int fin);

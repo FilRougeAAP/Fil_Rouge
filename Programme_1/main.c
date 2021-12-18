@@ -22,6 +22,7 @@ int main(int argc, char ** argv) {
 	
 	outputPath = "output";
 	
+	//Test seulement si T_elt est int
 	// 8, 11, 16, 5, 7, 14, 6, 1, 3, 10, 12,16
 	insertAVL(&root, 8);
 	insertAVL(&root, 11);

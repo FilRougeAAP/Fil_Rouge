@@ -5,7 +5,7 @@
 	// CHOISIR ICI CE QUE REPRESENTE LE TYPE T_elt 
 	//#define ELT_CHAR		// un caractère ?
 	//#define ELT_INT		// un entier (choix par défaut) ?
-	//#define ELT_STRING		// une chaîne de caractères ?
+	#define ELT_STRING		// une chaîne de caractères ?
 	//#define ELT_STRUCT		// une structure plus complexe ? 
 	/////////////////////////////////////////////////////////////////////////
 

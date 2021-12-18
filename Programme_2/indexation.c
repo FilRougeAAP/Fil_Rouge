@@ -15,20 +15,12 @@
 int main(int argc, char ** argv) {
 	T_avl root = NULL; 
 	
-
-    
-	/////////////////////////////////////////////////////////////////////////
-	/////////////////////////////////////////////////////////////////////////
-
-	//outputPath = "output_Prog2";
-	
+	//Ouverture Fichier
 	char *filename;
 	
 	filename = malloc(sizeof(filename));
 	sprintf(filename, "%s",argv[1]); 
-    
 
-	//Ouverture Fichier
 
     FILE *in_file = fopen(filename, "r");
 
@@ -57,15 +49,12 @@ int main(int argc, char ** argv) {
     insertAVL(&root, file_contents, taille_mots);
     
     
-
     while (fscanf(in_file, "%[^\n] ", file_contents) != EOF){
         insertAVL(&root, file_contents, taille_mots);
         compteur_mots++;
     }    
 
     stop = clock();
-
-    
     
     
     // Paramètres de l'arbre
@@ -78,34 +67,32 @@ int main(int argc, char ** argv) {
 
     printf("Taille des mots : %d\nNombre de mots: %ld\nDurée de construction: %.2f \n"
         "Nombre de noeuds: %ld\nHauteur: %d\nHauteur minimale d’un arbre contenant %ld noeuds: %d\n",
-        taille_mots, compteur_mots, duree, nb_noeud, hauteur, nb_noeud, h_min
-        );
+        taille_mots, compteur_mots, duree, nb_noeud, hauteur, nb_noeud, h_min);
   
 
     //Recherche de mots
 
-    T_elt mot_ecris = (T_elt) malloc(27*sizeof(char*)), mot_cherche ; // Taille maximale mot 26 + 1 pour "\0"
+    T_elt mot_ecris = (T_elt) malloc(27*sizeof(char*)), mot_cherche ; // Taille maximale mot de 26 caractère + 1 pour "\0"
     clock_t start_rech = clock(), stop_rech;
     int profondeur=0;
     T_avlNode * search = NULL;
     
     printf("Entrer le mot à rechercher (Ctrl+D) pour terminer: ");
    
-    
 
-
-    while (fgets(mot_ecris, 27, stdin)!=NULL)
+    while (fgets(mot_ecris, 27, stdin)!=NULL) //Récupération mot donné par l'utilisateur en boucle
     {
 
-        mot_cherche = strndup(mot_ecris, strcspn(mot_ecris, "\n"));
+        mot_cherche = strndup(mot_ecris, strcspn(mot_ecris, "\n")); // On garde seulement les caractères avec le retour à la ligne pour la recherche
         
 
-        profondeur = 0;
+        profondeur = 0; // Initialisation de la profondeur pour chaque recherche
 
         start_rech = clock();
-        search = searchAVL_rec(root, mot_cherche, taille_mots, &profondeur);
+        search = searchAVL_rec(root, mot_cherche, taille_mots, &profondeur); 
         stop_rech = clock();
 
+        // Affichage résultats de la recherche
         if (search == NULL) printf("Mot non trouvé\n");
         else
         {
@@ -119,7 +106,7 @@ int main(int argc, char ** argv) {
     } 
 
 
-
+    freeAVL(root);
     fclose(in_file);
     
 
