@@ -171,14 +171,23 @@ static T_avlNode *balanceAVL(T_avlNode *A)
 }
 
 // Calculer la signature
+
+static int compare (char const *a, char const *b){
+	char const *pa = a, *pb = b;
+	return *pa-*pb;
+}
+
 T_elt cal_signature(T_elt mot, int taille_mots)
 {
 	// Le calcul de la signature revient à trier la chaîne de caractère par ordre alphabétique
 	char *sign;
 
-	sign = (char *)malloc(sizeof(char *) * taille_mots);
+	sign = (char *) malloc(sizeof(char *) * taille_mots);
 	memcpy(sign, mot, taille_mots);
-	mergeSort_tab(sign, 0, taille_mots - 1); // On ne trie pas le caractère de fin \0
+
+	//mergeSort_tab(sign, 0, taille_mots - 1); // On ne trie pas le caractère de fin \0, 
+
+	qsort(sign, taille_mots, sizeof(char), compare); // qsort est plus rapide que mergeSort_tab donc on l'utilise
 
 	return sign;
 }
@@ -251,9 +260,10 @@ void printAVL(T_avl root, int indent)
 	{
 		printAVL(root->r, indent + 1); // afficher le sous-arbre droit avec indentation+1
 
-		for (i = 0; i < indent; i++)
-			printf("\t");
+		for (i = 0; i < indent; i++)printf("\t");
 		printf("%s\n", toString(root->list_mots)); // afficher le noeud racine
+		for (i = 0; i < indent; i++)printf("\t");
+		printf("sign %s\n", root->val);
 
 		printAVL(root->l, indent + 1); // afficher le sous-arbre gauche avec indentation+1
 	}

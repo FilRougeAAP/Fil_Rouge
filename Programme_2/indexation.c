@@ -56,6 +56,7 @@ int main(int argc, char ** argv) {
 
     stop = clock();
     
+    //printAVL(root, 0);
     
     // Paramètres de l'arbre
     duree = (stop-start)* 1000.0 / CLOCKS_PER_SEC;
@@ -63,7 +64,7 @@ int main(int argc, char ** argv) {
     hauteur = heightAVL(root);
 
     nb_noeud_temp = nb_noeud;
-    while ((nb_noeud_temp/=2)>0) h_min++;
+    while ((nb_noeud_temp/=2)>0) h_min++; //La hauteur revient à h_min = round(log_2(nb_noeud)) ou encore en comptant le nombre de fois que l'on peut diviser nb_noeud par 2.
 
     printf("Taille des mots : %d\nNombre de mots: %ld\nDurée de construction: %.2f \n"
         "Nombre de noeuds: %ld\nHauteur: %d\nHauteur minimale d’un arbre contenant %ld noeuds: %d\n",

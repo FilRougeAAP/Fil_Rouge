@@ -63,7 +63,7 @@ int main(int argc, char ** argv) {
     
     // Comptage du nombre d'anagramme en les ajoutant au fichier de stockage
     nombre_anagrammes = nb_anagramme(root, taille_mots, fichier);
-    printf("%d\n", nombre_anagrammes);
+    printf("Nombre anagrammes: %d\n", nombre_anagrammes);
    
     fclose(fichier);
     freeAVL(root); // On a plus besoin de l'arbre, on libère la mémoire
