@@ -234,8 +234,6 @@ void printAVL(T_avl root, int indent) {
 		// afficher le noeud racine
 		for(i=0;i<indent;i++) printf("\t");
 		printf("%s\n", toString(root->list_mots));
-		for(i=0;i<indent;i++) printf("\t");
-		printf("sign %s\n", toString(root->val));
 		//printf("desi = %d\n", root->bal);
 		// afficher le sous-arbre gauche avec indentation+1
 		printAVL(root->l, indent+1);

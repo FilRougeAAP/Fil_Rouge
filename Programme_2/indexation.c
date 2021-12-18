@@ -40,7 +40,7 @@ int main(int argc, char ** argv) {
     //Initialisation paramètres à afficher
     long int compteur_mots =0;
     int taille_mots=0;
-    clock_t start = clock(), stop;
+    clock_t start, stop;
     int hauteur;
     long int nb_noeud, nb_noeud_temp;
     int h_min=1; // On initialise h_min pour la hauteur minimale contenant le même nombre de noeud à 1 pour compter le premier noeud
@@ -52,6 +52,8 @@ int main(int argc, char ** argv) {
     fscanf(in_file, "%[^\n] ", file_contents);
     taille_mots = strlen(file_contents);
     
+    start = clock();
+
     insertAVL(&root, file_contents, taille_mots);
     
     
