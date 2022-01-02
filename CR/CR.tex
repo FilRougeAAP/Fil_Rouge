@@ -1,0 +1,173 @@
+\documentclass{article} %[a4paper, 10pt, french]
+
+\usepackage[french]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amsfonts,amssymb,mathrsfs}
+\frenchbsetup{StandardLists=true}
+\usepackage{geometry}
+\usepackage{lmodern} %pas pixelisé
+\usepackage{engrec,titlesec,lipsum,xcolor}
+\usepackage{fancybox}
+\usepackage[skins, most]{tcolorbox}
+\usepackage[bookmarks={true},bookmarksopen={true}, pdftitle={APP - Fil rouge}, pdfauthor={APProximatif}, pdfsubject={Arbres équilibres}]{hyperref}
+\usepackage{setspace}
+\usepackage{mathabx}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{array,multirow,makecell}
+\usepackage{titlesec}
+\usepackage{multirow}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage[nottoc]{tocbibind}
+
+\AddThinSpaceBeforeFootnotes
+\FrenchFootnotes
+\geometry{hmargin=1.2cm, top=1.2cm, bottom = 1.5cm}
+\definecolor{vert}{rgb}{0,0.69,0.31}
+\definecolor{bleue}{rgb}{0,0.31,0.69} 
+\definecolor{violet}{rgb}{0.38,0.18,055} % 97, 45, 140     244, 208, 63
+\definecolor{jaune}{rgb}{0.96, 0.85, 0.23}
+
+
+\definecolor{darkWhite}{rgb}{0.94,0.94,0.94}
+\definecolor{vert}{rgb}{0,0.69,0.31}
+\definecolor{rose}{rgb}{1,0.08,0.58}% rgb(255,20,147)
+\definecolor{rouge}{rgb}{0.78,0.12,0.08}
+\definecolor{bleue}{rgb}{0,0.31,0.69}
+\definecolor{gris}{rgb}{0.4,0.4,0.4}
+\definecolor{marron}{rgb}{0.4,0.2,0}
+\definecolor{darkWhite}{rgb}{0.94,0.94,0.94}
+
+\newtcolorbox{titre}[1][]{enhanced, drop fuzzy shadow southwest, arc=4mm, outer arc=1mm, colback=red!5!white,colframe=red!75!black, boxrule=3pt, center, halign = center, left=1mm, right=1mm,  width = 7.7cm }
+
+
+
+\renewcommand*{\lstlistlistingname}{Code Listings}
+\renewcommand*{\lstlistingname}{Code Listing}
+\definecolor{gray}{gray}{0.5}
+\colorlet{commentcolour}{green!50!black}
+\colorlet{stringcolour}{red!60!black}
+\colorlet{keywordcolour}{magenta!90!black}
+\colorlet{exceptioncolour}{yellow!50!red}
+\colorlet{commandcolour}{blue!60!black}
+\colorlet{numpycolour}{blue!60!green}
+\colorlet{literatecolour}{magenta!90!black}
+\colorlet{promptcolour}{green!50!black}
+\colorlet{specmethodcolour}{violet}
+
+
+\newcommand*{\framemargin}{3ex}
+\newcommand*{\literatecolour}{\textcolor{literatecolour}}
+\newcommand*{\pythonprompt}{\textcolor{promptcolour}{{>}{>}{>}}}
+
+ 
+
+\definecolor{darkWhite}{rgb}{0.94,0.94,0.94}
+ 
+\lstset{
+  aboveskip=3mm,
+  belowskip=-2mm,
+  backgroundcolor=\color{darkWhite},
+  basicstyle=\ttfamily\footnotesize,
+  breakatwhitespace=false,
+  breaklines=true,
+  captionpos=b,
+  commentstyle=\color{commentcolour},
+  deletekeywords={...},
+  emph={[8]spectre, addNode, sortAddNode, Partitionnement_v3, comparer, echanger}, % nom des fonctions
+  emphstyle={[8]\color{violet}},
+  escapeinside={\%*}{*)},
+  extendedchars=true,
+  framexleftmargin=16pt,
+  framextopmargin=3pt,
+  framexbottommargin=6pt,
+  %frame=tb,
+  frame=trbl,
+  keepspaces=true,
+  keywordstyle=\color{blue},
+  language=C,
+  literate=
+  {²}{{\textsuperscript{2}}}1
+  {⁴}{{\textsuperscript{4}}}1
+  {⁶}{{\textsuperscript{6}}}1
+  {⁸}{{\textsuperscript{8}}}1
+  {€}{{\euro{}}}1
+  {é}{{\'e}}1
+  {è}{{\`{e}}}1
+  {ê}{{\^{e}}}1
+  {ë}{{\¨{e}}}1
+  {É}{{\'{E}}}1
+  {Ê}{{\^{E}}}1
+  {û}{{\^{u}}}1
+  {ù}{{\`{u}}}1
+  {â}{{\^{a}}}1
+  {à}{{\`{a}}}1
+  {á}{{\'{a}}}1
+  {ã}{{\~{a}}}1
+  {Á}{{\'{A}}}1
+  {Â}{{\^{A}}}1
+  {Ã}{{\~{A}}}1
+  {ç}{{\c{c}}}1
+  {Ç}{{\c{C}}}1
+  {õ}{{\~{o}}}1
+  {ó}{{\'{o}}}1
+  {ô}{{\^{o}}}1
+  {Õ}{{\~{O}}}1
+  {Ó}{{\'{O}}}1
+  {Ô}{{\^{O}}}1
+  {î}{{\^{i}}}1
+  {Î}{{\^{I}}}1
+  {í}{{\'{i}}}1
+  {Í}{{\~{Í}}}1,
+  morekeywords={*,...},
+  numbers=left,
+  numbersep=3pt,
+  numberstyle=\footnotesize\color{black},
+  rulecolor=\color{black},
+  showspaces=false,
+  showstringspaces=false,
+  showtabs=false,
+  stepnumber=1,
+  stringstyle=\color{orange},
+  tabsize=4,
+  title=\lstname,
+}
+
+ 
+
+
+
+\title{AAP - Fil Rouge : Compte rendu}
+\author{Maistret James, Thieffry \'Emile, CHEVALIER Romain, Feng Yanli \&  Hong Yutong}
+\date{\today}
+
+\renewcommand{\thesection}{\arabic{section}}
+\newcolumntype{M}{>{\centering\arraybackslash}m{1.5cm}}
+
+\begin{document}
+\maketitle
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+\tableofcontents
+
+\section{Introduction}
+
+\section{Programme 1: displayAVL.exe}
+\section{Programme 2: indexation.exe}
+\section{Programme 3: anagrammes.exe}
+\section{Gestion de projet}
+\section{Conclusion}
+
+
+
+\nocite{*}
+
+\bibliography{bibli}
+\bibliographystyle{plain}
+
+
+\end{document}
