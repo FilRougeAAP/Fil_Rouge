@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.1.2)  2 JAN 2022 16:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.1.2)  2 JAN 2022 18:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1199,13 +1199,13 @@ Package rerunfilecheck Info: File `CR.out' has not changed.
 Here is how much of TeX's memory you used:
  27617 strings out of 481239
  537749 string characters out of 5920378
- 1111726 words of memory out of 5000000
+ 1111734 words of memory out of 5000000
  42293 multiletter control sequences out of 15000+600000
  582975 words of font info for 87 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,6n,103p,996b,425s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,6n,103p,1000b,425s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb>
-Output written on /home/romain/OneDrive/AAP/fil_rouge_2021/CR/CR.pdf (1 page, 156993 bytes).
+Output written on /home/romain/OneDrive/AAP/fil_rouge_2021/CR/CR.pdf (1 page, 156295 bytes).
 PDF statistics:
  116 PDF objects out of 1000 (max. 8388607)
  82 compressed objects within 1 object stream

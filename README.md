@@ -49,4 +49,4 @@ make anagrammes.exe && ./anagrammes.exe Dico_nn/Dico_08.txt | less
 
 ## Realised by
 
-Maistret James, Thieffry Émile, CHEVALIER Romain, Feng Yanli &  Hong Yutong. 
+Maistret James, Thieffry Émile, Chevalier Romain, Feng Yanli &  Hong Yutong. 
