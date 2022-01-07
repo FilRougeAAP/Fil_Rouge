@@ -51,9 +51,7 @@ static T_avl newNodeAVL(T_elt e) {
  
 
 int	insertAVL (T_avlNode ** pRoot, T_elt e) {
-	// ordre de récurrence ? 
-	// cas de base ?
-	// cas général
+	
 	
 	int deltaH=0;
 	if (*pRoot==NULL)

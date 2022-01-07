@@ -192,7 +192,8 @@ Et de même, \( a' = 1 + a + \max(b', 0) \)
 En se basant sur \cite{lect_lines}, nous lisons ligne par ligne le fichier, car il y a mot par ligne dans le fichier, en ajoutant un compteur de lignes lues afin de respecter le nombre de mots à mettre dans l'arbre renseigné par l'utilisateur.  
 
 \subsubsection{Affichage avec graphviz}
-Les fonctions permettant de générer le fichier \texttt{.dot} étaient déjà données, néanmoins le programme ne prenait en compte les noms composés (ie les noms avec un tiret dedans). Afin de corriger cette erreur, il a fallut ajouter des guillemets (donc la séquence suivant \texttt{\textbackslash "\%s\textbackslash "}) dans les noms des blocs graphviz à afficher. De plus, l'affichage du facteur de déséquilibre n'était pas configuré, nous l'avons donc ajouté à coté du nom de famille du nœud.
+Les fonctions permettant de générer le fichier \texttt{.dot} étaient déjà données, néanmoins le programme ne prenait en compte les noms composés (ie les noms avec un tiret dedans). Afin de corriger cette erreur, il a fallut ajouter des guillemets (donc la séquence suivant
+% \texttt{\backslash "\% s\backslash"}) 
 
 
 \subsection{Jeux de test, exemples d'exécution}
