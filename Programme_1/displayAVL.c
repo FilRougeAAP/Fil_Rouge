@@ -12,7 +12,6 @@
 
 int main(int argc, char ** argv) {
 	T_avl root = NULL; 
-	T_avlNode * pAux = NULL;
 
 
 	/////////////////////////////////////////////////////////////////////////

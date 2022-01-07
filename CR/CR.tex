@@ -10,7 +10,7 @@
 \usepackage{engrec,titlesec,lipsum,xcolor}
 \usepackage{fancybox}
 \usepackage[skins, most]{tcolorbox}
-\usepackage[bookmarks={true},bookmarksopen={true}, pdftitle={APP - Fil rouge}, pdfauthor={APProximatif}, pdfsubject={Arbres équilibres AVL}]{hyperref}
+\usepackage[bookmarks={true},bookmarksopen={true}, hidelinks, pdftitle={APP - Fil rouge}, pdfauthor={APProximatif}, pdfsubject={Arbres équilibres AVL}]{hyperref}
 \usepackage{setspace}
 \usepackage{mathabx}
 \usepackage{multicol}
@@ -21,7 +21,9 @@
 \usepackage{hyperref}
 \usepackage{listings}
 \usepackage{graphicx}
-\usepackage[nottoc]{tocbibind}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
 
 \AddThinSpaceBeforeFootnotes
 \FrenchFootnotes
@@ -140,8 +142,8 @@
 
 
 
-\title{AAP - Fil Rouge : Compte rendu}
-\author{Maistret James, Thieffry \'Emile, Chevalier Romain, Feng Yanli \&  Hong Yutong}
+\title{AAP - Fil Rouge :\\ Compte rendu}
+\author{AAPproximatif \\ Maistret James, Thieffry \'Emile, Chevalier Romain, Feng Yanli \&  Hong Yutong}
 \date{\today}
 
 \renewcommand{\thesection}{\arabic{section}}
@@ -153,6 +155,9 @@
 \setcounter{tocdepth}{3}
 
 \tableofcontents
+\listoffigures
+
+\newpage
 
 \section{Introduction}
 
@@ -169,14 +174,15 @@ b' &= h(B_g)-h(A_g) \\
 &= b + 1 + \max(0, h(A_d)-h(A_g))\\
 &= b + 1 + \max(0, -a) & \mathrm{en\  utilisant \ la \  définition \  de } \ a \\
 &= 1+ b -\min(a,0)
-\end{align*}
+\end{align*} % aime pas les é
+
 Et de même, \( a' = 1 + a + \max(b', 0) \)
 
 \begin{figure}[!h]
 \begin{center}
-\includegraphics[scale=0.35]{LeftRotate1.png}
-\includegraphics[scale=0.20]{FlecheLeftrotate.png}
-\includegraphics[scale=0.35]{LeftRotate2.png}
+\includegraphics[scale=0.35]{Img_prog1/LeftRotate1.png}
+\includegraphics[scale=0.20]{Img_prog1/FlecheLeftrotate.png}
+\includegraphics[scale=0.35]{Img_prog1/LeftRotate2.png}
 \end{center}
 
 \caption{Rotation simple à gauche}
@@ -196,12 +202,57 @@ Les fonctions permettant de générer le fichier \texttt{.dot} étaient déjà d
 
 
 \subsection{Jeux de test, exemples d'exécution}
+On trouve en figure~\ref{fig:prog1_1} , les différentes étapes de construction de l'arbre pour 10 premiers mots du fichier \texttt{PrenomsV2.txt}. 
 
+\begin{figure}[p]
+  
+  \begin{center}
+    \rule{\linewidth}{.5pt}
+    \subcaptionbox{Etape 1}{\includegraphics[scale=0.5]{Img_prog1/displayAVL_v00.png}} \vline
+    \subcaptionbox{Etape 2}{\includegraphics[scale=0.5]{Img_prog1/displayAVL_v01.png}} \vline
+    \subcaptionbox{Etape 3}{\includegraphics[scale=0.5]{Img_prog1/displayAVL_v02.png}} \rule{\linewidth}{.5pt} %\vline
+    \subcaptionbox{Etape 4}{\includegraphics[scale=0.3]{Img_prog1/displayAVL_v03.png}} \vline
+    \subcaptionbox{Etape 5}{\includegraphics[scale=0.3]{Img_prog1/displayAVL_v04.png}} \vline
+    \subcaptionbox{Etape 6}{\includegraphics[scale=0.3]{Img_prog1/displayAVL_v05.png}} \rule{\linewidth}{.5pt} %\vline
+    \subcaptionbox{Etape 7}{\includegraphics[scale=0.3]{Img_prog1/displayAVL_v06.png}} \vline
+    \subcaptionbox{Etape 8}{\includegraphics[scale=0.3]{Img_prog1/displayAVL_v07.png}} \rule{\linewidth}{.5pt} %\vline
+    \subcaptionbox{Etape 9}{\includegraphics[scale=0.25]{Img_prog1/displayAVL_v08.png}} \vline
+    \subcaptionbox{Etape 10}{\includegraphics[scale=0.30]{Img_prog1/displayAVL_v09.png}}  \rule{\linewidth}{.5pt} %\vline
+   
+    
+  \end{center}
+  
+  \caption{Construction de l'arbre pour les 10 premiers prénoms de \texttt{PrenomsV2.txt}}
+  \label{fig:prog1_1}
+\end{figure}
 
+\begin{figure}[p]
+  \begin{center}
+    \includegraphics[scale=0.25]{Img_prog1/displayAVL_20.png}
+  \end{center}
+  \caption{Example arbre avec les 20 premiers prénoms de \texttt{PrenomsV1.txt}}
+\end{figure}
 
 \section{Programme 2: indexation.exe}
 \subsection{Développement}
+
+
 \subsubsection{Fonction de base pour créer l'arbre}
+\paragraph{Restructuration des mailles} Pour ce programme, nous avons rajouté un champ dans chaque maille de l'arbre. Dans un premier temps, nous avons décidé que le champ \texttt{T\_avl NodeAVL->val} deviendrai la signature des mots contenus dans le nouveau champ \texttt{T\_avl NodeAVL->list\_mots} qui contient la liste de tout les mots comportant la même signature. Voir illustration des champs d'une maille en figure~\ref{fig:champs_maille} et un exemple en figure~\ref{fig:exemple:maille}.
+
+\begin{figure}[H]
+  \begin{center}
+    \subcaptionbox{Champs de la maille\label{fig:champs_maille}}{\includegraphics[scale=0.75]{Img_prog2/Maille_vide.eps}}
+    \subcaptionbox{Exemple de maille\label{fig:exemple:maille}}{\includegraphics[scale=0.75]{Img_prog2/Maille_exemple.eps}}
+  \end{center}
+  \caption{Restructuration des mailles pour le second programme}
+  \label{fig:restruc_pro2}
+\end{figure}
+
+
+\subsubsection{Calcul des paramètres de l'arbre}
+\subsubsection{Recherche de mots}
+
 \subsection{Jeux de test, exemples d'exécution}
 
 
