@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.1.2)  8 JAN 2022 00:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.1.2)  8 JAN 2022 10:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1304,7 +1304,7 @@ Package epstopdf Info: Source file: <Img_prog2/Maille_vide.eps>
 (epstopdf)                    date: 2022-01-08 00:03:02
 (epstopdf)                    size: 5481 bytes
 (epstopdf)             Output file: <Img_prog2/Maille_vide-eps-converted-to.pdf>
-(epstopdf)                    date: 2022-01-08 00:03:04
+(epstopdf)                    date: 2022-01-08 10:52:01
 (epstopdf)                    size: 6645 bytes
 (epstopdf)             Command: <repstopdf --outfile=Img_prog2/Maille_vide-eps-converted-to.pdf Img_prog2/Maille_vide.eps>
 (epstopdf)             \includegraphics on input line 245.
@@ -1318,7 +1318,7 @@ Package epstopdf Info: Source file: <Img_prog2/Maille_exemple.eps>
 (epstopdf)                    date: 2022-01-08 00:15:40
 (epstopdf)                    size: 5443 bytes
 (epstopdf)             Output file: <Img_prog2/Maille_exemple-eps-converted-to.pdf>
-(epstopdf)                    date: 2022-01-08 00:15:42
+(epstopdf)                    date: 2022-01-08 10:52:01
 (epstopdf)                    size: 5064 bytes
 (epstopdf)             Command: <repstopdf --outfile=Img_prog2/Maille_exemple-eps-converted-to.pdf Img_prog2/Maille_exemple.eps>
 (epstopdf)             \includegraphics on input line 246.
@@ -1338,18 +1338,18 @@ Package rerunfilecheck Info: File `CR.out' has not changed.
 (rerunfilecheck)             Checksum: 1CD40E9D0B2A8423F17E816ECABCC97E;1297.
  ) 
 Here is how much of TeX's memory you used:
- 28834 strings out of 481239
- 560992 string characters out of 5920378
- 1141246 words of memory out of 5000000
+ 28835 strings out of 481239
+ 561004 string characters out of 5920378
+ 1141248 words of memory out of 5000000
  43457 multiletter control sequences out of 15000+600000
  591765 words of font info for 90 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,8n,103p,1011b,539s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/matha10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/matha7.pfb>
-Output written on /home/romain/OneDrive/AAP/fil_rouge_2021/CR/CR.pdf (4 pages, 492507 bytes).
+Output written on /home/romain/OneDrive/AAP/fil_rouge_2021/CR/CR.pdf (4 pages, 492589 bytes).
 PDF statistics:
- 277 PDF objects out of 1000 (max. 8388607)
- 202 compressed objects within 3 object streams
- 33 named destinations out of 1000 (max. 500000)
+ 278 PDF objects out of 1000 (max. 8388607)
+ 203 compressed objects within 3 object streams
+ 34 named destinations out of 1000 (max. 500000)
  381 words of extra memory for PDF output out of 10000 (max. 10000000)
 
