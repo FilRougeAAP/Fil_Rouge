@@ -79,7 +79,7 @@
   captionpos=b,
   commentstyle=\color{commentcolour},
   deletekeywords={...},
-  emph={[8]spectre, addNode, sortAddNode, Partitionnement_v3, comparer, echanger}, % nom des fonctions
+  emph={[8]spectre, addNode, sortAddNode, Partitionnement_v3, comparer, echanger, strndup, strcspn}, % nom des fonctions
   emphstyle={[8]\color{violet}},
   escapeinside={\%*}{*)},
   extendedchars=true,
@@ -229,7 +229,7 @@ On trouve en figure~\ref{fig:prog1_1} , les différentes étapes de construction
 
 \begin{figure}[p]
   \begin{center}
-    \includegraphics[scale=0.25]{Img_prog1/displayAVL_20.eps}
+    \includegraphics[scale=0.36]{Img_prog1/displayAVL_20.eps}
   \end{center}
   \caption{Example arbre avec les 20 premiers prénoms de \texttt{PrenomsV1.txt}}
 \end{figure}
@@ -260,12 +260,50 @@ On trouve en figure~\ref{fig:prog1_1} , les différentes étapes de construction
 \paragraph{Remarque} On récupère le taille des mots dès la première ligne du fichier ouvert, et on le met en argument de chaque fonction afin de ne pas avoir à le recalculer et ainsi gagner du temps de calcul. 
 
 \subsubsection{Calcul des paramètres de l'arbre}
-Pour calculer le nombre de noeud et la hauteur de l'arbre, on utilise la fonction \texttt{nbNodesAVL} et \texttt{heightAVL}, donnée lors de la séance. Pour compter le nombre de mots, noté \(N\) , on incrémente un compteur à mot qu'on ajoute à l'arbre. La taille des mots est récupéré dès l'ouverture du ficher grâce à la fonction \texttt{strlen}. Pour la durée, on fait la différence du l'heure au début et l'heure de fin de la construction. Et enfin pour calculer la hauteur minimale d’un arbre contenant le même nombre de noeud, on calcul \(\displaystyle \min \left\lbrace k \in \mathbb{N} \vert \frac{N}{2^k} > 0 \right\rbrace \) 
+Pour calculer le nombre de noeud et la hauteur de l'arbre, on utilise la fonction \texttt{nbNodesAVL} et \texttt{heightAVL}, donnée lors de la séance. Pour compter le nombre de mots, noté \(N\) , on incrémente un compteur à mot qu'on ajoute à l'arbre. La taille des mots est récupéré dès l'ouverture du ficher grâce à la fonction \texttt{strlen}. Pour la durée, on fait la différence du l'heure au début et l'heure de fin de la construction. Et enfin pour calculer la hauteur minimale d’un arbre contenant le même nombre de noeud, on calcul \(\displaystyle \max \left\lbrace k \in \mathbb{N}, \quad 0 < \left\lfloor  \frac{N}{2^k} \right\rfloor  \right\rbrace \), ce qui correspond à \(\left\lceil \log_2 (N) \right\rceil \). 
 
 \subsubsection{Recherche de mots}
 
-\subsection{Jeux de test, exemples d'exécution}
+\paragraph{Recherche d'un mot}Pour rechercher si un mot est présent dans l'arbre, on récupère le mot entré au clavier par l'utilisateur grâce à la fonction \texttt{fgets}, avec l'argument \texttt{stdin}, en faisant bien attention de supprimer le retour chariot \texttt{\textbackslash n} qui s'ajoute au mot écrit par l'utilisateur à l'aide de la commande en figure~\ref{fig:recherche_mot}. Ensuite, on recherche le mot grâce à la fonction \texttt{searchAVL\_rec} donnée en séance 5. 
 
+\begin{figure}[H]
+  \begin{lstlisting}
+    fgets(mot_ecris, 27, stdin) // 27 correspond au nombre maximum de caractères entré par l'utilisateur   (mot le plus long de la langue française à 26 caractères)
+    mot_cherche = strndup(mot_ecris, strcspn(mot_ecris, "\n"));
+    // la variable mot_ecris correspond au mot entré par l'utilisateur \end{lstlisting}
+  
+    \caption{Récupération mot entré par l'utilisateur pour la recherche dans l'arbre}
+    \label{fig:recherche_mot}
+\end{figure}
+
+
+\paragraph{Profondeur du noeud} Pour calculer la profondeur, on compte le nombre de fois où l'on fait appel à la fonction récursive \texttt{searchAVL\_rec}, pour cela on passe ce compteur en argument de la fonction de recherche. 
+
+\subsection{Jeux de test, exemples d'exécution}
+On trouve en figure~\ref{fig:prog_2} la sortie du programme \texttt{indexation.exe} pour le dictionnaire \texttt{Dico\_09.txt}.
+
+\begin{figure}[H]
+  \begin{lstlisting}
+    Taille des mots : 9
+    Nombre de mots: 70039
+    Durée de construction: 273.47 
+    Nombre de noeuds: 43444
+    Hauteur: 18
+    Hauteur minimale d un arbre contenant 43444 noeuds: 16
+    Entrer le mot à rechercher (Ctrl+D) pour terminer: RENIPPEES
+    RENIPPEES
+    Profondeur: 17
+    Temps de recherche: 0.03
+    Entrer le mot à rechercher (Ctrl+D) pour terminer: DECHARNEE
+    ADHERENCE, ADHERENCE, DECHARNEE, DECHARNEE
+    Profondeur: 9
+    Temps de recherche: 0.02
+    Entrer le mot à rechercher (Ctrl+D) pour terminer: mot
+    Mot non trouvé
+    Entrer le mot à rechercher (Ctrl+D) pour terminer: // Ctrl+D entré \end{lstlisting}
+    \caption{Execution \texttt{indexation.exe} avec dictionnaire Dico\_09.txt}
+    \label{fig:prog_2}
+\end{figure}
 
 
 \section{Programme 3: anagrammes.exe}

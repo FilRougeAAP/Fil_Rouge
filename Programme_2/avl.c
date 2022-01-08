@@ -297,7 +297,6 @@ T_avlNode *searchAVL_rec(T_avl root, T_elt e, int taille_mots, int *p)
 
 	// ordre de récurrence : hauteur de l'arbre
 	int test;
-
 	(*p)++;
 
 	// base
