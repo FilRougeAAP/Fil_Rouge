@@ -164,6 +164,7 @@
 Création d'arbre équilibrés en language C, pour le fil rouge d'APP de l'année 21-22. Mise en place de trois programmes, le premier pour créer une image d'un arbre AVL à partir d'une liste de mot, le second pour indexer un dictionnaire dans un arbre AVL dont le tri des mots est basé sur leur signature et le dernier programme, qui repose sur le second, permet de rechercher les anagrammes d'un mot. 
 
 \section{Programme 1: displayAVL.exe}
+\label{sec:prog_1}
 \subsection{Développement}
 \subsubsection{Fonction de base pour créer l'arbre}
 \paragraph{Rotations simples} Le programme de la rotation simple à droite était donné pour la rotation de gauche, nous avons raisonné par analogie et le calcul des facteur de déséquilibre est donné ci-dessous. En se basant sur la figure~\ref{LeftRot}, on a \( a = h(A_g) - h(A_d), b = h(B_g) - h(A)\) et \(h(A) = 1 +\max (h(A_g), h(A_d)) \) où \(h\) est la hauteur du noeud. Alors 
@@ -249,8 +250,18 @@ On trouve en figure~\ref{fig:prog1_1} , les différentes étapes de construction
   \label{fig:restruc_pro2}
 \end{figure}
 
-\paragraph{Ajout dans les mailles}
+\paragraph{Calcul de la signature} Pour calculer la signature d'un mot, on trie les lettres de ce mot. Dans un premier temps, nous avions utilisé les fonctions de tri fusion du TEA de la semaine 3. Et comme dans ce TEA, nous avions remarqué que le temps de tri de la fonction \texttt{qsort} était beaucoup plus faible que le temps du tri fusion. Finalement, nous utilisons la fonction \texttt{qsort} pour trier les lettres et donc calculer la signature. 
+
+\paragraph{Ajout de mot dans un arbre déjà construit} Pour ajouter un mot dans un arbre AVL déjà construit, deux cas de figure se présente: \begin{itemize}
+  \item Il n'y a pas de maille avec la signature de ce mot, dans ce cas, on crée une nouvelle maille avec la signature de ce mot et ce mot et on l'ajoute au bon endroit, en suivant le même algorithme que dans le programme 1 (cf. \ref{sec:prog_1}). Dont la comparaison entre les maille se fait sur la signature. 
+  \item Si il y a déjà une maille avec la signature du mot à ajouter, on ajoute le mot au champ \texttt{list\_mots}, en prenant garde de réallouer de la mémoire à ce champ et en concaténant le champ \texttt{list\_mots} et le mot grâce à la fonction \texttt{strcat} de la librairie \texttt{string.h}.
+\end{itemize}
+
+\paragraph{Remarque} On récupère le taille des mots dès la première ligne du fichier ouvert, et on le met en argument de chaque fonction afin de ne pas avoir à le recalculer et ainsi gagner du temps de calcul. 
+
 \subsubsection{Calcul des paramètres de l'arbre}
+Pour calculer le nombre de noeud et la hauteur de l'arbre, on utilise la fonction \texttt{nbNodesAVL} et \texttt{heightAVL}, donnée lors de la séance. Pour compter le nombre de mots, noté \(N\) , on incrémente un compteur à mot qu'on ajoute à l'arbre. La taille des mots est récupéré dès l'ouverture du ficher grâce à la fonction \texttt{strlen}. Pour la durée, on fait la différence du l'heure au début et l'heure de fin de la construction. Et enfin pour calculer la hauteur minimale d’un arbre contenant le même nombre de noeud, on calcul \(\displaystyle \min \left\lbrace k \in \mathbb{N} \vert \frac{N}{2^k} > 0 \right\rbrace \) 
+
 \subsubsection{Recherche de mots}
 
 \subsection{Jeux de test, exemples d'exécution}

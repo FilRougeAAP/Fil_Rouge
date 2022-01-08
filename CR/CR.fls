@@ -463,11 +463,15 @@ INPUT /home/romain/OneDrive/AAP/fil_rouge_2021/CR/Img_prog2/Maille_exemple.eps
 INPUT /home/romain/OneDrive/AAP/fil_rouge_2021/CR/Img_prog2/Maille_exemple-eps-converted-to.pdf
 INPUT /home/romain/OneDrive/AAP/fil_rouge_2021/CR/Img_prog2/Maille_exemple-eps-converted-to.pdf
 INPUT /home/romain/OneDrive/AAP/fil_rouge_2021/CR/Img_prog2/Maille_exemple-eps-converted-to.pdf
+INPUT /usr/share/texmf/tex/latex/lm/ts1lmr.fd
+INPUT /usr/share/texmf/tex/latex/lm/ts1lmr.fd
+INPUT /usr/share/texmf/fonts/tfm/public/lm/ts1-lmr10.tfm
 INPUT /home/romain/OneDrive/AAP/fil_rouge_2021/CR/CR.bbl
 INPUT /home/romain/OneDrive/AAP/fil_rouge_2021/CR/CR.bbl
 INPUT /home/romain/OneDrive/AAP/fil_rouge_2021/CR/CR.aux
 INPUT /home/romain/OneDrive/AAP/fil_rouge_2021/CR/CR.out
 INPUT /home/romain/OneDrive/AAP/fil_rouge_2021/CR/CR.out
+INPUT /usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc
 INPUT /usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc
 INPUT /usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc
 INPUT /usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc
@@ -483,3 +487,5 @@ INPUT /usr/share/texmf/fonts/type1/public/lm/lmr9.pfb
 INPUT /usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/matha10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/matha7.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/mathx10.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb
