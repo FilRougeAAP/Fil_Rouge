@@ -359,6 +359,9 @@ INPUT /usr/share/texmf/fonts/tfm/public/lm/ec-lmbx12.tfm
 INPUT /home/romain/OneDrive/AAP/fil_rouge_2021/CR/CR.toc
 INPUT /home/romain/OneDrive/AAP/fil_rouge_2021/CR/CR.toc
 INPUT /usr/share/texmf/fonts/tfm/public/lm/ec-lmbx10.tfm
+INPUT /usr/share/texmf/tex/latex/lm/t1lmtt.fd
+INPUT /usr/share/texmf/tex/latex/lm/t1lmtt.fd
+INPUT /usr/share/texmf/fonts/tfm/public/lm/ec-lmtk10.tfm
 INPUT /usr/share/texmf/fonts/tfm/public/lm/rm-lmr10.tfm
 INPUT /usr/share/texmf/fonts/tfm/public/lm/rm-lmr7.tfm
 INPUT /usr/share/texmf/fonts/tfm/public/lm/rm-lmr5.tfm
@@ -389,11 +392,10 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/mathabx/mathx10.tfm
 OUTPUT /home/romain/OneDrive/AAP/fil_rouge_2021/CR/CR.toc
 INPUT /home/romain/OneDrive/AAP/fil_rouge_2021/CR/CR.lof
 INPUT /home/romain/OneDrive/AAP/fil_rouge_2021/CR/CR.lof
-INPUT /usr/share/texmf/tex/latex/lm/t1lmtt.fd
-INPUT /usr/share/texmf/tex/latex/lm/t1lmtt.fd
 INPUT /usr/share/texmf/fonts/tfm/public/lm/ec-lmtt10.tfm
 OUTPUT /home/romain/OneDrive/AAP/fil_rouge_2021/CR/CR.lof
 INPUT /var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map
+INPUT /usr/share/texmf/fonts/tfm/public/lm/ec-lmtk10.tfm
 INPUT /usr/share/texmf/fonts/tfm/public/lm/ec-lmbx12.tfm
 INPUT /home/romain/OneDrive/AAP/fil_rouge_2021/CR/Img_prog1/LeftRotate1.png
 INPUT /home/romain/OneDrive/AAP/fil_rouge_2021/CR/Img_prog1/LeftRotate1.png
@@ -468,6 +470,15 @@ INPUT /usr/share/texmf/tex/latex/lm/ts1lmr.fd
 INPUT /usr/share/texmf/fonts/tfm/public/lm/ts1-lmr10.tfm
 INPUT /usr/share/texmf/fonts/tfm/public/lm/ec-lmtt8.tfm
 INPUT /usr/share/texmf/fonts/tfm/public/lm/ec-lmr8.tfm
+INPUT /home/romain/OneDrive/AAP/fil_rouge_2021/CR/Img_prog3/liste_chaine.eps
+INPUT /home/romain/OneDrive/AAP/fil_rouge_2021/CR/Img_prog3/liste_chaine.eps
+INPUT /home/romain/OneDrive/AAP/fil_rouge_2021/CR/Img_prog3/liste_chaine.eps
+INPUT /home/romain/OneDrive/AAP/fil_rouge_2021/CR/Img_prog3/liste_chaine-eps-converted-to.pdf
+INPUT /home/romain/OneDrive/AAP/fil_rouge_2021/CR/Img_prog3/liste_chaine-eps-converted-to.pdf
+INPUT /home/romain/OneDrive/AAP/fil_rouge_2021/CR/Img_prog3/liste_chaine.eps
+INPUT /home/romain/OneDrive/AAP/fil_rouge_2021/CR/Img_prog3/liste_chaine-eps-converted-to.pdf
+INPUT /home/romain/OneDrive/AAP/fil_rouge_2021/CR/Img_prog3/liste_chaine-eps-converted-to.pdf
+INPUT /home/romain/OneDrive/AAP/fil_rouge_2021/CR/Img_prog3/liste_chaine-eps-converted-to.pdf
 INPUT /home/romain/OneDrive/AAP/fil_rouge_2021/CR/CR.bbl
 INPUT /home/romain/OneDrive/AAP/fil_rouge_2021/CR/CR.bbl
 INPUT /home/romain/OneDrive/AAP/fil_rouge_2021/CR/CR.aux
@@ -488,6 +499,7 @@ INPUT /usr/share/texmf/fonts/type1/public/lm/lmr17.pfb
 INPUT /usr/share/texmf/fonts/type1/public/lm/lmr7.pfb
 INPUT /usr/share/texmf/fonts/type1/public/lm/lmr8.pfb
 INPUT /usr/share/texmf/fonts/type1/public/lm/lmr9.pfb
+INPUT /usr/share/texmf/fonts/type1/public/lm/lmtk10.pfb
 INPUT /usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb
 INPUT /usr/share/texmf/fonts/type1/public/lm/lmtt8.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/matha10.pfb

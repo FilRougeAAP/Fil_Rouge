@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.1.2)  8 JAN 2022 23:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.1.2)  9 JAN 2022 01:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1190,6 +1190,12 @@ LaTeX Font Info:    Trying to load font information for U+rsfs on input line 154
  (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 ) (/home/romain/OneDrive/AAP/fil_rouge_2021/CR/CR.toc
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 3.
+ (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 3.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10> on input line 4.
 LaTeX Font Info:    External font `lmex10' loaded for size
@@ -1200,22 +1206,15 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 \tf@toc=\write8
 \openout8 = `CR.toc'.
 
- (/home/romain/OneDrive/AAP/fil_rouge_2021/CR/CR.lof
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 4.
- (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
-File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-))
+ (/home/romain/OneDrive/AAP/fil_rouge_2021/CR/CR.lof)
 \tf@lof=\write9
 \openout9 = `CR.lof'.
 
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-
-LaTeX Warning: Command \' invalid in math mode on input line 178.
-
-
-LaTeX Warning: Command \' invalid in math mode on input line 178.
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <14.4> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 166.
 
 
 LaTeX Warning: Command \' invalid in math mode on input line 178.
@@ -1229,67 +1228,73 @@ LaTeX Warning: Command \' invalid in math mode on input line 178.
 
 LaTeX Warning: Command \' invalid in math mode on input line 178.
 
-<Img_prog1/LeftRotate1.png, id=157, 528.97626pt x 296.10625pt>
+
+LaTeX Warning: Command \' invalid in math mode on input line 178.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 178.
+
+<Img_prog1/LeftRotate1.png, id=164, 528.97626pt x 296.10625pt>
 File: Img_prog1/LeftRotate1.png Graphic file (type png)
 <use Img_prog1/LeftRotate1.png>
 Package pdftex.def Info: Img_prog1/LeftRotate1.png  used on input line 184.
 (pdftex.def)             Requested size: 185.14445pt x 103.63873pt.
-<Img_prog1/FlecheLeftrotate.png, id=159, 739.563pt x 347.49825pt>
+<Img_prog1/FlecheLeftrotate.png, id=166, 739.563pt x 347.49825pt>
 File: Img_prog1/FlecheLeftrotate.png Graphic file (type png)
 <use Img_prog1/FlecheLeftrotate.png>
 Package pdftex.def Info: Img_prog1/FlecheLeftrotate.png  used on input line 185.
 (pdftex.def)             Requested size: 147.90997pt x 69.49841pt.
-<Img_prog1/LeftRotate2.png, id=160, 528.97626pt x 296.10625pt>
+<Img_prog1/LeftRotate2.png, id=167, 528.97626pt x 296.10625pt>
 File: Img_prog1/LeftRotate2.png Graphic file (type png)
 <use Img_prog1/LeftRotate2.png>
 Package pdftex.def Info: Img_prog1/LeftRotate2.png  used on input line 186.
 (pdftex.def)             Requested size: 185.14445pt x 103.63873pt.
-<Img_prog1/displayAVL_v00.png, id=163, 203.76125pt x 73.27374pt>
+<Img_prog1/displayAVL_v00.png, id=170, 203.76125pt x 73.27374pt>
 File: Img_prog1/displayAVL_v00.png Graphic file (type png)
 <use Img_prog1/displayAVL_v00.png>
 Package pdftex.def Info: Img_prog1/displayAVL_v00.png  used on input line 212.
 (pdftex.def)             Requested size: 101.88037pt x 36.63676pt.
-<Img_prog1/displayAVL_v01.png, id=164, 280.04625pt x 184.69pt>
+<Img_prog1/displayAVL_v01.png, id=171, 280.04625pt x 184.69pt>
 File: Img_prog1/displayAVL_v01.png Graphic file (type png)
 <use Img_prog1/displayAVL_v01.png>
 Package pdftex.def Info: Img_prog1/displayAVL_v01.png  used on input line 213.
 (pdftex.def)             Requested size: 140.02277pt x 92.34476pt.
-<Img_prog1/displayAVL_v02.png, id=165, 420.57124pt x 184.69pt>
+<Img_prog1/displayAVL_v02.png, id=172, 420.57124pt x 184.69pt>
 File: Img_prog1/displayAVL_v02.png Graphic file (type png)
 <use Img_prog1/displayAVL_v02.png>
 Package pdftex.def Info: Img_prog1/displayAVL_v02.png  used on input line 214.
 (pdftex.def)             Requested size: 210.28511pt x 92.34476pt.
-<Img_prog1/displayAVL_v03.png, id=166, 490.83376pt x 296.10625pt>
+<Img_prog1/displayAVL_v03.png, id=173, 490.83376pt x 296.10625pt>
 File: Img_prog1/displayAVL_v03.png Graphic file (type png)
 <use Img_prog1/displayAVL_v03.png>
 Package pdftex.def Info: Img_prog1/displayAVL_v03.png  used on input line 215.
 (pdftex.def)             Requested size: 147.25125pt x 88.83255pt.
-<Img_prog1/displayAVL_v04.png, id=167, 538.01pt x 296.10625pt>
+<Img_prog1/displayAVL_v04.png, id=174, 538.01pt x 296.10625pt>
 File: Img_prog1/displayAVL_v04.png Graphic file (type png)
 <use Img_prog1/displayAVL_v04.png>
 Package pdftex.def Info: Img_prog1/displayAVL_v04.png  used on input line 216.
 (pdftex.def)             Requested size: 161.40424pt x 88.83255pt.
-<Img_prog1/displayAVL_v05.png, id=168, 637.38126pt x 296.10625pt>
+<Img_prog1/displayAVL_v05.png, id=175, 637.38126pt x 296.10625pt>
 File: Img_prog1/displayAVL_v05.png Graphic file (type png)
 <use Img_prog1/displayAVL_v05.png>
 Package pdftex.def Info: Img_prog1/displayAVL_v05.png  used on input line 217.
 (pdftex.def)             Requested size: 191.21585pt x 88.83255pt.
-<Img_prog1/displayAVL_v06.png, id=169, 854.19125pt x 296.10625pt>
+<Img_prog1/displayAVL_v06.png, id=176, 854.19125pt x 296.10625pt>
 File: Img_prog1/displayAVL_v06.png Graphic file (type png)
 <use Img_prog1/displayAVL_v06.png>
 Package pdftex.def Info: Img_prog1/displayAVL_v06.png  used on input line 218.
 (pdftex.def)             Requested size: 256.25935pt x 88.83255pt.
-<Img_prog1/displayAVL_v07.png, id=170, 918.43124pt x 406.51875pt>
+<Img_prog1/displayAVL_v07.png, id=177, 918.43124pt x 406.51875pt>
 File: Img_prog1/displayAVL_v07.png Graphic file (type png)
 <use Img_prog1/displayAVL_v07.png>
 Package pdftex.def Info: Img_prog1/displayAVL_v07.png  used on input line 219.
 (pdftex.def)             Requested size: 275.5315pt x 121.95656pt.
-<Img_prog1/displayAVL_v08.png, id=171, 980.66376pt x 406.51875pt>
+<Img_prog1/displayAVL_v08.png, id=178, 980.66376pt x 406.51875pt>
 File: Img_prog1/displayAVL_v08.png Graphic file (type png)
 <use Img_prog1/displayAVL_v08.png>
 Package pdftex.def Info: Img_prog1/displayAVL_v08.png  used on input line 220.
 (pdftex.def)             Requested size: 245.16533pt x 101.62943pt.
-<Img_prog1/displayAVL_v09.png, id=172, 915.42pt x 406.51875pt>
+<Img_prog1/displayAVL_v09.png, id=179, 915.42pt x 406.51875pt>
 File: Img_prog1/displayAVL_v09.png Graphic file (type png)
 <use Img_prog1/displayAVL_v09.png>
 Package pdftex.def Info: Img_prog1/displayAVL_v09.png  used on input line 221.
@@ -1304,7 +1309,7 @@ Package epstopdf Info: Source file: <Img_prog1/displayAVL_20.eps>
 (epstopdf)             Command: <repstopdf --outfile=Img_prog1/displayAVL_20-eps-converted-to.pdf Img_prog1/displayAVL_20.eps>
 (epstopdf)             \includegraphics on input line 232.
 Package epstopdf Info: Output file is already uptodate.
-<Img_prog1/displayAVL_20-eps-converted-to.pdf, id=190, 1335.99126pt x 388.45125pt>
+<Img_prog1/displayAVL_20-eps-converted-to.pdf, id=197, 1335.99126pt x 388.45125pt>
 File: Img_prog1/displayAVL_20-eps-converted-to.pdf Graphic file (type pdf)
 <use Img_prog1/displayAVL_20-eps-converted-to.pdf>
 Package pdftex.def Info: Img_prog1/displayAVL_20-eps-converted-to.pdf  used on input line 232.
@@ -1316,12 +1321,12 @@ Package epstopdf Info: Source file: <Img_prog2/Maille_vide.eps>
 (epstopdf)                    date: 2022-01-08 10:52:01
 (epstopdf)                    size: 6645 bytes
 (epstopdf)             Command: <repstopdf --outfile=Img_prog2/Maille_vide-eps-converted-to.pdf Img_prog2/Maille_vide.eps>
-(epstopdf)             \includegraphics on input line 246.
+(epstopdf)             \includegraphics on input line 245.
 Package epstopdf Info: Output file is already uptodate.
-<Img_prog2/Maille_vide-eps-converted-to.pdf, id=193, 320.19624pt x 78.2925pt>
+<Img_prog2/Maille_vide-eps-converted-to.pdf, id=200, 320.19624pt x 78.2925pt>
 File: Img_prog2/Maille_vide-eps-converted-to.pdf Graphic file (type pdf)
 <use Img_prog2/Maille_vide-eps-converted-to.pdf>
-Package pdftex.def Info: Img_prog2/Maille_vide-eps-converted-to.pdf  used on input line 246.
+Package pdftex.def Info: Img_prog2/Maille_vide-eps-converted-to.pdf  used on input line 245.
 (pdftex.def)             Requested size: 240.14658pt x 58.71922pt.
 Package epstopdf Info: Source file: <Img_prog2/Maille_exemple.eps>
 (epstopdf)                    date: 2022-01-08 00:15:40
@@ -1330,38 +1335,53 @@ Package epstopdf Info: Source file: <Img_prog2/Maille_exemple.eps>
 (epstopdf)                    date: 2022-01-08 10:52:01
 (epstopdf)                    size: 5064 bytes
 (epstopdf)             Command: <repstopdf --outfile=Img_prog2/Maille_exemple-eps-converted-to.pdf Img_prog2/Maille_exemple.eps>
-(epstopdf)             \includegraphics on input line 247.
+(epstopdf)             \includegraphics on input line 246.
 Package epstopdf Info: Output file is already uptodate.
-<Img_prog2/Maille_exemple-eps-converted-to.pdf, id=194, 396.48125pt x 78.2925pt>
+<Img_prog2/Maille_exemple-eps-converted-to.pdf, id=201, 396.48125pt x 78.2925pt>
 File: Img_prog2/Maille_exemple-eps-converted-to.pdf Graphic file (type pdf)
 <use Img_prog2/Maille_exemple-eps-converted-to.pdf>
-Package pdftex.def Info: Img_prog2/Maille_exemple-eps-converted-to.pdf  used on input line 247.
+Package pdftex.def Info: Img_prog2/Maille_exemple-eps-converted-to.pdf  used on input line 246.
 (pdftex.def)             Requested size: 297.3602pt x 58.71922pt.
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 256.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 255.
  (/usr/share/texmf/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [3 </home/romain/OneDrive/AAP/fil_rouge_2021/CR/Img_prog2/Maille_vide-eps-converted-to.pdf> </home/romain/OneDrive/AAP/fil_rouge_2021/CR/Img_prog2/Maille_exemple-eps-converted-to.pdf>] [4 </home/romain/OneDrive/AAP/fil_rouge_2021/CR/Img_prog1/displayAVL_v00.png> </home/romain/OneDrive/AAP/fil_rouge_2021/CR/Img_prog1/displayAVL_v01.png> </home/romain/OneDrive/AAP/fil_rouge_2021/CR/Img_prog1/displayAVL_v02.png> </home/romain/OneDrive/AAP/fil_rouge_2021/CR/Img_prog1/displayAVL_v03.png> </home/romain/OneDrive/AAP/fil_rouge_2021/CR/Img_prog1/displayAVL_v04.png> </home/romain/OneDrive/AAP/fil_rouge_2021/CR/Img_prog1/displayAVL_v05.png> </home/romain/OneDrive/AAP/fil_rouge_2021/CR/Img_prog1/displayAVL_v06.png> </home/romain/OneDrive/AAP/fil_rouge_2021/CR/Img_prog1/displayAVL_v07.png> </home/romain/OneDrive/AAP/fil_rouge_2021/CR/Img_prog1/displayAVL_v08.png> </home/romain/OneDrive/AAP/fil_rouge_2021/CR/Img_prog1/displayAVL_v09.png> </home/romain/OneDrive/AAP/fil_rouge_2021/CR/Img_prog1/displayAVL_20-eps-converted-to.pdf>] (/home/romain/OneDrive/AAP/fil_rouge_2021/CR/CR.bbl) [5]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 326.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 326.
+) [3 </home/romain/OneDrive/AAP/fil_rouge_2021/CR/Img_prog2/Maille_vide-eps-converted-to.pdf> </home/romain/OneDrive/AAP/fil_rouge_2021/CR/Img_prog2/Maille_exemple-eps-converted-to.pdf>] [4 </home/romain/OneDrive/AAP/fil_rouge_2021/CR/Img_prog1/displayAVL_v00.png> </home/romain/OneDrive/AAP/fil_rouge_2021/CR/Img_prog1/displayAVL_v01.png> </home/romain/OneDrive/AAP/fil_rouge_2021/CR/Img_prog1/displayAVL_v02.png> </home/romain/OneDrive/AAP/fil_rouge_2021/CR/Img_prog1/displayAVL_v03.png> </home/romain/OneDrive/AAP/fil_rouge_2021/CR/Img_prog1/displayAVL_v04.png> </home/romain/OneDrive/AAP/fil_rouge_2021/CR/Img_prog1/displayAVL_v05.png> </home/romain/OneDrive/AAP/fil_rouge_2021/CR/Img_prog1/displayAVL_v06.png> </home/romain/OneDrive/AAP/fil_rouge_2021/CR/Img_prog1/displayAVL_v07.png> </home/romain/OneDrive/AAP/fil_rouge_2021/CR/Img_prog1/displayAVL_v08.png> </home/romain/OneDrive/AAP/fil_rouge_2021/CR/Img_prog1/displayAVL_v09.png> </home/romain/OneDrive/AAP/fil_rouge_2021/CR/Img_prog1/displayAVL_20-eps-converted-to.pdf>] [5]
+Package epstopdf Info: Source file: <Img_prog3/liste_chaine.eps>
+(epstopdf)                    date: 2022-01-09 01:31:48
+(epstopdf)                    size: 38463 bytes
+(epstopdf)             Output file: <Img_prog3/liste_chaine-eps-converted-to.pdf>
+(epstopdf)                    date: 2022-01-09 01:31:50
+(epstopdf)                    size: 9077 bytes
+(epstopdf)             Command: <repstopdf --outfile=Img_prog3/liste_chaine-eps-converted-to.pdf Img_prog3/liste_chaine.eps>
+(epstopdf)             \includegraphics on input line 343.
+Package epstopdf Info: Output file is already uptodate.
+<Img_prog3/liste_chaine-eps-converted-to.pdf, id=285, 1841.88126pt x 334.24875pt>
+File: Img_prog3/liste_chaine-eps-converted-to.pdf Graphic file (type pdf)
+<use Img_prog3/liste_chaine-eps-converted-to.pdf>
+Package pdftex.def Info: Img_prog3/liste_chaine-eps-converted-to.pdf  used on input line 343.
+(pdftex.def)             Requested size: 515.72325pt x 93.589pt.
+ (/home/romain/OneDrive/AAP/fil_rouge_2021/CR/CR.bbl [6 </home/romain/OneDrive/AAP/fil_rouge_2021/CR/Img_prog3/liste_chaine-eps-converted-to.pdf>]) [7]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 392.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 392.
  (/home/romain/OneDrive/AAP/fil_rouge_2021/CR/CR.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 326.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 326.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 392.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 392.
 Package rerunfilecheck Info: File `CR.out' has not changed.
-(rerunfilecheck)             Checksum: 1CD40E9D0B2A8423F17E816ECABCC97E;1297.
+(rerunfilecheck)             Checksum: 0BE9EDE3D9D5BACF46B474F2CB424ECD;1298.
  ) 
 Here is how much of TeX's memory you used:
- 29379 strings out of 481239
- 566556 string characters out of 5920378
- 1267300 words of memory out of 5000000
- 43966 multiletter control sequences out of 15000+600000
- 595443 words of font info for 93 fonts, out of 8000000 for 9000
+ 29615 strings out of 481239
+ 570737 string characters out of 5920378
+ 1369299 words of memory out of 5000000
+ 44152 multiletter control sequences out of 15000+600000
+ 596079 words of font info for 95 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,8n,103p,1011b,1371s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/matha10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/matha7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/mathb10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/mathx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on /home/romain/OneDrive/AAP/fil_rouge_2021/CR/CR.pdf (5 pages, 528533 bytes).
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmtk10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/matha10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/matha7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/mathb10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/mathx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on /home/romain/OneDrive/AAP/fil_rouge_2021/CR/CR.pdf (7 pages, 571050 bytes).
 PDF statistics:
- 353 PDF objects out of 1000 (max. 8388607)
- 271 compressed objects within 3 object streams
- 63 named destinations out of 1000 (max. 500000)
- 381 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 438 PDF objects out of 1000 (max. 8388607)
+ 350 compressed objects within 4 object streams
+ 110 named destinations out of 1000 (max. 500000)
+ 386 words of extra memory for PDF output out of 10000 (max. 10000000)
 

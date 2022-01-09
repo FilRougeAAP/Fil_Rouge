@@ -163,7 +163,7 @@
 
 Création d'arbre équilibrés en language C, pour le fil rouge d'APP de l'année 21-22. Mise en place de trois programmes, le premier pour créer une image d'un arbre AVL à partir d'une liste de mot, le second pour indexer un dictionnaire dans un arbre AVL dont le tri des mots est basé sur leur signature et le dernier programme, qui repose sur le second, permet de rechercher les anagrammes d'un mot. 
 
-\section{Programme 1: displayAVL.exe}
+\section{Programme 1: \texttt{displayAVL.exe}}
 \label{sec:prog_1}
 \subsection{Développement}
 \subsubsection{Fonction de base pour créer l'arbre}
@@ -234,9 +234,8 @@ On trouve en figure~\ref{fig:prog1_1} , les différentes étapes de construction
   \caption{Example arbre avec les 20 premiers prénoms de \texttt{PrenomsV1.txt}}
 \end{figure}
 
-\section{Programme 2: indexation.exe}
+\section{Programme 2: \texttt{indexation.exe} \label{sec:prog_2}}
 \subsection{Développement}
-
 
 \subsubsection{Fonction de base pour créer l'arbre}
 \paragraph{Restructuration des mailles} Pour ce programme, nous avons rajouté un champ dans chaque maille de l'arbre. Dans un premier temps, nous avons décidé que le champ \texttt{T\_avl NodeAVL->val} deviendrai la signature des mots contenus dans le nouveau champ \texttt{T\_avl NodeAVL->list\_mots} qui contient la liste de tout les mots comportant la même signature. Voir illustration des champs d'une maille en figure~\ref{fig:champs_maille} et un exemple en figure~\ref{fig:exemple:maille}.
@@ -253,7 +252,7 @@ On trouve en figure~\ref{fig:prog1_1} , les différentes étapes de construction
 \paragraph{Calcul de la signature} Pour calculer la signature d'un mot, on trie les lettres de ce mot. Dans un premier temps, nous avions utilisé les fonctions de tri fusion du TEA de la semaine 3. Et comme dans ce TEA, nous avions remarqué que le temps de tri de la fonction \texttt{qsort} était beaucoup plus faible que le temps du tri fusion. Finalement, nous utilisons la fonction \texttt{qsort} pour trier les lettres et donc calculer la signature. 
 
 \paragraph{Ajout de mot dans un arbre déjà construit} Pour ajouter un mot dans un arbre AVL déjà construit, deux cas de figure se présente: \begin{itemize}
-  \item Il n'y a pas de maille avec la signature de ce mot, dans ce cas, on crée une nouvelle maille avec la signature de ce mot et ce mot et on l'ajoute au bon endroit, en suivant le même algorithme que dans le programme 1 (cf. \ref{sec:prog_1}). Dont la comparaison entre les maille se fait sur la signature. 
+  \item Il n'y a pas de maille avec la signature de ce mot, dans ce cas, on crée une nouvelle maille avec la signature de ce mot et ce mot et on l'ajoute au bon endroit, en suivant le même algorithme que dans le programme 1 (cf. \ref{sec:prog_1} - \texttt{displayAVL.exe}). Dont la comparaison entre les maille se fait sur la signature. 
   \item Si il y a déjà une maille avec la signature du mot à ajouter, on ajoute le mot au champ \texttt{list\_mots}, en prenant garde de réallouer de la mémoire à ce champ et en concaténant le champ \texttt{list\_mots} et le mot grâce à la fonction \texttt{strcat} de la librairie \texttt{string.h}.
 \end{itemize}
 
@@ -301,14 +300,81 @@ On trouve en figure~\ref{fig:prog_2} la sortie du programme \texttt{indexation.e
     Entrer le mot à rechercher (Ctrl+D) pour terminer: mot
     Mot non trouvé
     Entrer le mot à rechercher (Ctrl+D) pour terminer: // Ctrl+D entré \end{lstlisting}
-    \caption{Execution \texttt{indexation.exe} avec dictionnaire Dico\_09.txt}
+    \caption{Execution \texttt{indexation.exe} avec dictionnaire \texttt{Dico\_09.txt}}
     \label{fig:prog_2}
 \end{figure}
 
 
-\section{Programme 3: anagrammes.exe}
+\section{Programme 3: \texttt{anagrammes.exe}}
 \subsection{Développement}
+Pour construire l'arbre on procède comme dans le programme (cf. \ref{sec:prog_2} - \texttt{indexation.exe})
+
+\paragraph{Nombre anagrammes} Pour compter le nombre d'anagrammes, on utilise la fonction \texttt{nb\_anagrammes}, voir en figure~\ref{fig:nb_anag}. Pour cela, on parcourt tout l'arbre récursivement et on compte le nombre de fois où le champ \texttt{list\_mots} (cf. \ref{fig:champs_maille}) possède plus de caractères que un mot seul. 
+
+\paragraph{Affichage des anagrammes} Afin d'afficher les anagrammes, lorsqu'on les compte dans la fonction \texttt{nb\_anagrammes} on ajoute les anagrammes à un fichier externe afin de garder seulement ce qui nous intéresse de l'arbre (cf. ligne 7 en figure~\ref{fig:nb_anag}). Puis à partir de ce fichier, on crée une liste chaînée, grâce aux fonctions développées en TEA, dont chaque maille contient la liste anagrammes d'une même signature. Pour finir, on trie la liste chaînée en fonction de la longueur de la liste de mots contenue dans chaque maille, par ordre décroissant. 
+
+\begin{figure}[H]
+  \begin{lstlisting}
+int nb_anagramme(T_avl root, int taille_mots, FILE *fp){
+  int compteur = 0; // Vaut 0 si pas d'anagramme pour cette maille et 1 si il y a des anagrammes
+
+  if (root!=NULL){
+    if (strlen(root->list_mots)>taille_mots){ // On regarde si la liste de mots de maille contient plus d'un mot
+      compteur++; //Si c'est le cas, c'est que c'est qu'il y a des anagrammes de ce mot
+            fprintf(fp, "%s\n", root->list_mots); // On ajoute les anagrammes au fichier de stockage
+    }
+
+    return compteur + nb_anagramme(root->l, taille_mots, fp) + nb_anagramme(root->r, taille_mots, fp); // Compte le nombre de mots du dictionnaire disposant d anagrammes
+  }
+
+  return 0;
+}\end{lstlisting}
+\caption{Fonction: \texttt{nb\_anagrammes}, programme 3}
+\label{fig:nb_anag}
+  
+\end{figure}
+
 \subsection{Jeux de test, exemples d'exécution}
+
+On trouve en figure~\ref{fig:prog_3_2} , la liste chaînée triée par ordre décroissant pour le dictionnaire \texttt{Dico\_16.txt} et en figure~\ref{fig:prog_3_1} la sortie du programme \texttt{anagramme.exe} pour ce même dictionnaire.
+
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[scale=0.28]{Img_prog3/liste_chaine.eps}
+  \end{center}
+  \caption{Liste chaînée des anagrammes pour le dictionnaire \texttt{Dico\_16.txt}}
+  \label{fig:prog_3_2}
+\end{figure}
+
+\begin{figure}[H]
+  \begin{lstlisting}
+Nombre anagrammes: 22
+Listes anagrammes:
+RAPPROVISIONNEES, REAPPROVISIONNES, REAPPROVISIONNES
+BREDOUILLASSIONS, DEBROUILLASSIONS, DEBROUSSAILLIONS
+DESEMBOURGEOISES, DESEMBOURGEOISES
+SOUMISSIONNAIRES, SOUMISSIONNERAIS
+TREILLISSASSIONS, TRESSAILLISSIONS
+LITHOTYPOGRAPHIE, TYPOLITHOGRAPHIE
+APPROVISIONNEREZ, REAPPROVISIONNEZ
+REVOLUTIONNAIRES, REVOLUTIONNERAIS
+IMPRESSIONNERAIS, PERMISSIONNAIRES
+INTERPENETRERAIT, INTERPRETERAIENT
+CRISTALLISERIONS, RECRISTALLISIONS
+CORRECTIONNALISE, CORRECTIONNALISE
+EMBROUILLASSIONS, EMBROUSSAILLIONS
+BREDOUILLERAIENT, DEBROUILLERAIENT
+APPROVISIONNERAS, REAPPROVISIONNAS
+APPROVISIONNERAI, REAPPROVISIONNAI
+MANUTENTIONNAIRE, MANUTENTIONNERAI
+INTERNATIONALISE, INTERNATIONALISE
+MILITARISERAIENT, REMILITARISAIENT
+RETRANSFORMAIENT, TRANSFORMERAIENT
+RADIOTELEGRAPHIE, TELERADIOGRAPHIE
+REAPPARAITRAIENT, REAPPARAITRAIENT\end{lstlisting}
+\caption{Execution \texttt{anagrammes.exe} avec dictionnaire \texttt{Dico\_16.txt}}
+\label{fig:prog_3_1}
+\end{figure}
 
 
 
