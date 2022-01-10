@@ -181,22 +181,22 @@ Et de même, \( a' = 1 + a + \max(b', 0) \)
 
 \begin{figure}[!h]
 \begin{center}
-\includegraphics[scale=0.35]{Img_prog1/LeftRotate1.png}
+\includegraphics[scale=0.49]{Img_prog1/LeftRotate1.eps}
 \includegraphics[scale=0.20]{Img_prog1/FlecheLeftrotate.png}
-\includegraphics[scale=0.35]{Img_prog1/LeftRotate2.png}
+\includegraphics[scale=0.49]{Img_prog1/LeftRotate2.eps}
 \end{center}
 
 \caption{Rotation simple à gauche}
 \label{LeftRot}
 \end{figure}
 
-\paragraph{BalanceAVL} Algorithme donné pour la première partie de la fonction, la seconde partie est l'exacte analogie pour un arbre qui penche de l'autre coté. Lors du développement de cette fonction, nous nous sommes heurté à un problème pour les tests afin de savoir l'arbre penche, en effet pour faire une rotation double, il faut que le facteur de déséquilibre soit forcément de 2 en valeur absolue et pas seulement non nul, ie l'arbre est bien déséquilibré. Mais une fois rentré dans la rotation double, pour savoir si on fait une rotation double du même coté, ou des deux cotés différents il suffit que l'arbre penche, ie que le facteur de déséquilibre du second nœud a tourner soit non nul. 
+\paragraph{BalanceAVL} Algorithme donné pour la première partie de la fonction, la seconde partie est l'exacte analogie pour un arbre qui penche de l'autre coté. Lors du développement de cette fonction, nous nous sommes heurté à un problème pour les tests afin de savoir si l'arbre penche, en effet pour faire une rotation double, il faut que le facteur de déséquilibre soit forcément de 2 en valeur absolue et pas seulement non nul, ie l'arbre est bien déséquilibré. Mais une fois rentré dans la rotation double, pour savoir si on fait une rotation double du même coté, ou des deux cotés différents il suffit que l'arbre penche, ie que le facteur de déséquilibre du second nœud a tourner soit non nul. 
 
-
+% a modifié
 \paragraph{InsertAVL} Algorithme donné donc pas de remarques particulières.
 
 \subsubsection{Lecture du fichier}
-En se basant sur \cite{lect_lines}, nous lisons ligne par ligne le fichier, car il y a mot par ligne dans le fichier, en ajoutant un compteur de lignes lues afin de respecter le nombre de mots à mettre dans l'arbre renseigné par l'utilisateur.  
+En se basant sur \cite{lect_lines}, nous lisons ligne par ligne le fichier, car il y a un mot par ligne dans le fichier, en ajoutant un compteur de lignes lues afin de respecter le nombre de mots à mettre dans l'arbre renseigné par l'utilisateur.  
 
 \subsubsection{Affichage avec graphviz}
 Les fonctions permettant de générer le fichier \texttt{.dot} étaient déjà données, néanmoins le programme ne prenait en compte les noms composés (ie les noms avec un tiret dedans). Afin de corriger cette erreur, il a fallut ajouter des guillemets (donc la séquence suivant \texttt{\textbackslash "\%s\textbackslash "}) dans les noms des blocs graphviz à afficher. De plus, l'affichage du facteur de déséquilibre n'était pas configuré, nous l'avons donc ajouté à coté du nom de famille du nœud.
@@ -209,16 +209,16 @@ On trouve en figure~\ref{fig:prog1_1} , les différentes étapes de construction
   
   \begin{center}
     \rule{\linewidth}{.5pt}
-    \subcaptionbox{Etape 1}{\includegraphics[scale=0.5]{Img_prog1/displayAVL_v00.png}} \vline
-    \subcaptionbox{Etape 2}{\includegraphics[scale=0.5]{Img_prog1/displayAVL_v01.png}} \vline
-    \subcaptionbox{Etape 3}{\includegraphics[scale=0.5]{Img_prog1/displayAVL_v02.png}} \rule{\linewidth}{.5pt} %\vline
-    \subcaptionbox{Etape 4}{\includegraphics[scale=0.3]{Img_prog1/displayAVL_v03.png}} \vline
-    \subcaptionbox{Etape 5}{\includegraphics[scale=0.3]{Img_prog1/displayAVL_v04.png}} \vline
-    \subcaptionbox{Etape 6}{\includegraphics[scale=0.3]{Img_prog1/displayAVL_v05.png}} \rule{\linewidth}{.5pt} %\vline
-    \subcaptionbox{Etape 7}{\includegraphics[scale=0.3]{Img_prog1/displayAVL_v06.png}} \vline
-    \subcaptionbox{Etape 8}{\includegraphics[scale=0.3]{Img_prog1/displayAVL_v07.png}} \rule{\linewidth}{.5pt} %\vline
-    \subcaptionbox{Etape 9}{\includegraphics[scale=0.25]{Img_prog1/displayAVL_v08.png}} \vline
-    \subcaptionbox{Etape 10}{\includegraphics[scale=0.30]{Img_prog1/displayAVL_v09.png}}  \rule{\linewidth}{.5pt} %\vline
+    \subcaptionbox{Etape 1}{\includegraphics[scale=0.6]{Img_prog1/displayAVL_v00.eps}} \vline
+    \subcaptionbox{Etape 2}{\includegraphics[scale=0.6]{Img_prog1/displayAVL_v01.eps}} \vline
+    \subcaptionbox{Etape 3}{\includegraphics[scale=0.6]{Img_prog1/displayAVL_v02.eps}} \rule{\linewidth}{.5pt} %\vline
+    \subcaptionbox{Etape 4}{\includegraphics[scale=0.4]{Img_prog1/displayAVL_v03.eps}} \vline
+    \subcaptionbox{Etape 5}{\includegraphics[scale=0.4]{Img_prog1/displayAVL_v04.eps}} \vline
+    \subcaptionbox{Etape 6}{\includegraphics[scale=0.4]{Img_prog1/displayAVL_v05.eps}} \rule{\linewidth}{.5pt} %\vline
+    \subcaptionbox{Etape 7}{\includegraphics[scale=0.45]{Img_prog1/displayAVL_v06.eps}} \vline
+    \subcaptionbox{Etape 8}{\includegraphics[scale=0.45]{Img_prog1/displayAVL_v07.eps}} \rule{\linewidth}{.5pt} %\vline
+    \subcaptionbox{Etape 9}{\includegraphics[scale=0.35]{Img_prog1/displayAVL_v08.eps}} \vline
+    \subcaptionbox{Etape 10}{\includegraphics[scale=0.35]{Img_prog1/displayAVL_v09.eps}}  \rule{\linewidth}{.5pt} %\vline
    
     
   \end{center}
@@ -231,7 +231,7 @@ On trouve en figure~\ref{fig:prog1_1} , les différentes étapes de construction
   \begin{center}
     \includegraphics[scale=0.36]{Img_prog1/displayAVL_20.eps}
   \end{center}
-  \caption{Example arbre avec les 20 premiers prénoms de \texttt{PrenomsV1.txt}}
+  \caption{Exemple arbre avec les 20 premiers prénoms de \texttt{PrenomsV1.txt}}
 \end{figure}
 
 \section{Programme 2: \texttt{indexation.exe} \label{sec:prog_2}}
@@ -252,14 +252,14 @@ On trouve en figure~\ref{fig:prog1_1} , les différentes étapes de construction
 \paragraph{Calcul de la signature} Pour calculer la signature d'un mot, on trie les lettres de ce mot. Dans un premier temps, nous avions utilisé les fonctions de tri fusion du TEA de la semaine 3. Et comme dans ce TEA, nous avions remarqué que le temps de tri de la fonction \texttt{qsort} était beaucoup plus faible que le temps du tri fusion. Finalement, nous utilisons la fonction \texttt{qsort} pour trier les lettres et donc calculer la signature. 
 
 \paragraph{Ajout de mot dans un arbre déjà construit} Pour ajouter un mot dans un arbre AVL déjà construit, deux cas de figure se présente: \begin{itemize}
-  \item Il n'y a pas de maille avec la signature de ce mot, dans ce cas, on crée une nouvelle maille avec la signature de ce mot et ce mot et on l'ajoute au bon endroit, en suivant le même algorithme que dans le programme 1 (cf. \ref{sec:prog_1} - \texttt{displayAVL.exe}). Dont la comparaison entre les maille se fait sur la signature. 
+  \item Il n'y a pas de maille avec la signature de ce mot, dans ce cas, on crée une nouvelle maille avec la signature de ce mot et ce mot et on l'ajoute au bon endroit, en suivant le même algorithme que dans le programme 1 (cf. \ref{sec:prog_1} - \texttt{displayAVL.exe}). Dont la comparaison entre les mailles se fait sur la signature. 
   \item Si il y a déjà une maille avec la signature du mot à ajouter, on ajoute le mot au champ \texttt{list\_mots}, en prenant garde de réallouer de la mémoire à ce champ et en concaténant le champ \texttt{list\_mots} et le mot grâce à la fonction \texttt{strcat} de la librairie \texttt{string.h}.
 \end{itemize}
 
 \paragraph{Remarque} On récupère le taille des mots dès la première ligne du fichier ouvert, et on le met en argument de chaque fonction afin de ne pas avoir à le recalculer et ainsi gagner du temps de calcul. 
 
 \subsubsection{Calcul des paramètres de l'arbre}
-Pour calculer le nombre de noeud et la hauteur de l'arbre, on utilise la fonction \texttt{nbNodesAVL} et \texttt{heightAVL}, donnée lors de la séance. Pour compter le nombre de mots, noté \(N\) , on incrémente un compteur à mot qu'on ajoute à l'arbre. La taille des mots est récupéré dès l'ouverture du ficher grâce à la fonction \texttt{strlen}. Pour la durée, on fait la différence du l'heure au début et l'heure de fin de la construction. Et enfin pour calculer la hauteur minimale d’un arbre contenant le même nombre de noeud, on calcul \(\displaystyle \max \left\lbrace k \in \mathbb{N}, \quad 0 < \left\lfloor  \frac{N}{2^k} \right\rfloor  \right\rbrace \), ce qui correspond à \(\left\lceil \log_2 (N) \right\rceil \). 
+Pour calculer le nombre de noeud et la hauteur de l'arbre, on utilise la fonction \texttt{nbNodesAVL} et \texttt{heightAVL}, donnée lors de la séance. Pour compter le nombre de mots, noté \(N\) , on incrémente un compteur à mot qu'on ajoute à l'arbre. La taille des mots est récupéré dès l'ouverture du ficher grâce à la fonction \texttt{strlen}. Pour la durée, on fait la différence entre les heures de début et de fin de la construction. Et enfin pour calculer la hauteur minimale d’un arbre contenant le même nombre de noeud, on calcul \(\displaystyle \max \left\lbrace k \in \mathbb{N}, \quad 0 < \left\lfloor  \frac{N}{2^k} \right\rfloor  \right\rbrace \), ce qui correspond à \(\left\lceil \log_2 (N) \right\rceil \). 
 
 \subsubsection{Recherche de mots}
 
@@ -307,7 +307,7 @@ On trouve en figure~\ref{fig:prog_2} la sortie du programme \texttt{indexation.e
 
 \section{Programme 3: \texttt{anagrammes.exe}}
 \subsection{Développement}
-Pour construire l'arbre on procède comme dans le programme (cf. \ref{sec:prog_2} - \texttt{indexation.exe})
+Pour construire l'arbre, on procède comme dans le programme 2 \texttt{indexation.exe} (cf. \ref{sec:prog_2})
 
 \paragraph{Nombre anagrammes} Pour compter le nombre d'anagrammes, on utilise la fonction \texttt{nb\_anagrammes}, voir en figure~\ref{fig:nb_anag}. Pour cela, on parcourt tout l'arbre récursivement et on compte le nombre de fois où le champ \texttt{list\_mots} (cf. \ref{fig:champs_maille}) possède plus de caractères que un mot seul. 
 
