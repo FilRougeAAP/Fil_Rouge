@@ -193,9 +193,9 @@ Et de même, \( a' = 1 + a + \max(b', 0) \)
 \paragraph{BalanceAVL} Algorithme donné pour la première partie de la fonction, la seconde partie est l'exacte analogie pour un arbre qui penche de l'autre coté. Lors du développement de cette fonction, nous nous sommes heurté à un problème pour les tests afin de savoir si l'arbre penche, en effet pour faire une rotation double, il faut que le facteur de déséquilibre soit forcément de 2 en valeur absolue et pas seulement non nul, ie l'arbre est bien déséquilibré. Mais une fois rentré dans la rotation double, pour savoir si on fait une rotation double du même coté, ou des deux cotés différents il suffit que l'arbre penche, ie que le facteur de déséquilibre du second nœud a tourner soit non nul. 
 
 % a modifié
-\paragraph{InsertAVL} Cette fonction permet d'insérer au bon endroit la maille au 
+\paragraph{InsertAVL} Cette fonction permet d'insérer, au bon endroit, la maille dans l'arbre AVL. Pour cela, on s'est basé sur l'algorithme donné en séance 5 que nous avons traduit en C.
 
-\paragraph{FreeAVL}
+\paragraph{FreeAVL} Cette fonction permet de libérer la mémoire occupé par l'arbre à la fin de l'exécution. Pour cela, elle repose sur la fonction \texttt{free}. 
 
 \subsubsection{Lecture du fichier}
 En se basant sur \cite{lect_lines}, nous lisons ligne par ligne le fichier, car il y a un mot par ligne dans le fichier, en ajoutant un compteur de lignes lues afin de respecter le nombre de mots à mettre dans l'arbre renseigné par l'utilisateur.  
