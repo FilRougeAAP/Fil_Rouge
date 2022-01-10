@@ -193,13 +193,16 @@ Et de même, \( a' = 1 + a + \max(b', 0) \)
 \paragraph{BalanceAVL} Algorithme donné pour la première partie de la fonction, la seconde partie est l'exacte analogie pour un arbre qui penche de l'autre coté. Lors du développement de cette fonction, nous nous sommes heurté à un problème pour les tests afin de savoir si l'arbre penche, en effet pour faire une rotation double, il faut que le facteur de déséquilibre soit forcément de 2 en valeur absolue et pas seulement non nul, ie l'arbre est bien déséquilibré. Mais une fois rentré dans la rotation double, pour savoir si on fait une rotation double du même coté, ou des deux cotés différents il suffit que l'arbre penche, ie que le facteur de déséquilibre du second nœud a tourner soit non nul. 
 
 % a modifié
-\paragraph{InsertAVL} Algorithme donné donc pas de remarques particulières.
+\paragraph{InsertAVL} Cette fonction permet d'insérer au bon endroit la maille au 
+
+\paragraph{FreeAVL}
 
 \subsubsection{Lecture du fichier}
 En se basant sur \cite{lect_lines}, nous lisons ligne par ligne le fichier, car il y a un mot par ligne dans le fichier, en ajoutant un compteur de lignes lues afin de respecter le nombre de mots à mettre dans l'arbre renseigné par l'utilisateur.  
 
 \subsubsection{Affichage avec graphviz}
 Les fonctions permettant de générer le fichier \texttt{.dot} étaient déjà données, néanmoins le programme ne prenait en compte les noms composés (ie les noms avec un tiret dedans). Afin de corriger cette erreur, il a fallut ajouter des guillemets (donc la séquence suivant \texttt{\textbackslash "\%s\textbackslash "}) dans les noms des blocs graphviz à afficher. De plus, l'affichage du facteur de déséquilibre n'était pas configuré, nous l'avons donc ajouté à coté du nom de famille du nœud.
+
 
 
 \subsection{Jeux de test, exemples d'exécution}
@@ -259,11 +262,11 @@ On trouve en figure~\ref{fig:prog1_1} , les différentes étapes de construction
 \paragraph{Remarque} On récupère le taille des mots dès la première ligne du fichier ouvert, et on le met en argument de chaque fonction afin de ne pas avoir à le recalculer et ainsi gagner du temps de calcul. 
 
 \subsubsection{Calcul des paramètres de l'arbre}
-Pour calculer le nombre de noeud et la hauteur de l'arbre, on utilise la fonction \texttt{nbNodesAVL} et \texttt{heightAVL}, donnée lors de la séance. Pour compter le nombre de mots, noté \(N\) , on incrémente un compteur à mot qu'on ajoute à l'arbre. La taille des mots est récupéré dès l'ouverture du ficher grâce à la fonction \texttt{strlen}. Pour la durée, on fait la différence entre les heures de début et de fin de la construction. Et enfin pour calculer la hauteur minimale d’un arbre contenant le même nombre de noeud, on calcul \(\displaystyle \max \left\lbrace k \in \mathbb{N}, \quad 0 < \left\lfloor  \frac{N}{2^k} \right\rfloor  \right\rbrace \), ce qui correspond à \(\left\lceil \log_2 (N) \right\rceil \). 
+Pour calculer le nombre de noeud et la hauteur de l'arbre, on utilise la fonction \texttt{nbNodesAVL} et \texttt{heightAVL}, donnée lors de la séance 4. Pour compter le nombre de mots, noté \(N\) , on incrémente un compteur à mot qu'on ajoute à l'arbre. La taille des mots est récupéré dès l'ouverture du ficher grâce à la fonction \texttt{strlen}. Pour la durée, on fait la différence entre les heures de début et de fin de la construction. Et enfin pour calculer la hauteur minimale d’un arbre contenant le même nombre de noeud, on calcul \(\displaystyle \max \left\lbrace k \in \mathbb{N}, \quad 0 < \left\lfloor  \frac{N}{2^k} \right\rfloor  \right\rbrace \), ce qui correspond à \(\left\lceil \log_2 (N) \right\rceil \). 
 
 \subsubsection{Recherche de mots}
 
-\paragraph{Recherche d'un mot}Pour rechercher si un mot est présent dans l'arbre, on récupère le mot entré au clavier par l'utilisateur grâce à la fonction \texttt{fgets}, avec l'argument \texttt{stdin}, en faisant bien attention de supprimer le retour chariot \texttt{\textbackslash n} qui s'ajoute au mot écrit par l'utilisateur à l'aide de la commande en figure~\ref{fig:recherche_mot}. Ensuite, on recherche le mot grâce à la fonction \texttt{searchAVL\_rec} donnée en séance 5. 
+\paragraph{Recherche d'un mot}Pour rechercher si un mot est présent dans l'arbre, on récupère le mot entré au clavier par l'utilisateur grâce à la fonction \texttt{fgets}, avec l'argument \texttt{stdin}, en faisant bien attention de supprimer le retour chariot \texttt{\textbackslash n} qui s'ajoute au mot écrit par l'utilisateur à l'aide de la commande en figure~\ref{fig:recherche_mot}. Ensuite, on recherche le mot grâce à la fonction \texttt{searchAVL\_rec} donnée en séance 4. 
 
 \begin{figure}[H]
   \begin{lstlisting}
