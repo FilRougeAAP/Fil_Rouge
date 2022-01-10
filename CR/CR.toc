@@ -28,4 +28,4 @@
 \contentsline {paragraph}{Affichage des anagrammes}{5}{paragraph*.18}%
 \contentsline {subsection}{\numberline {4.2}Jeux de test, exemples d'exécution}{6}{subsection.4.2}%
 \contentsline {section}{\numberline {5}Gestion de projet}{7}{section.5}%
-\contentsline {section}{\numberline {6}Conclusion}{7}{section.6}%
+\contentsline {section}{\numberline {6}Conclusion}{8}{section.6}%

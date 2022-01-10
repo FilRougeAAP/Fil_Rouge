@@ -14,14 +14,14 @@ digraph displayAVL {
 		color     = "blue"
 	]
 
-	"HABACUC" [label = "{{<nom> HABACUC | <bal> -1 } | { <g> | <d>}}"];
-	"HABACUC":g -> "AXEL":nom;
-	"AXEL" [label = "{{<nom> AXEL | <bal> 0 } | { <g> | <d>}}"];
-	"AXEL" [label = "{{<nom> AXEL | <bal> 0 }| { <g> NULL | <d> NULL}}"];
-	"HABACUC":d -> "JEANNINE":nom;
-	"JEANNINE" [label = "{{<nom> JEANNINE | <bal> -1 } | { <g> | <d>}}"];
-	"JEANNINE" [label = "{{<nom> JEANNINE | <bal> -1 }| { <g> NULL | <d> }}"];
-	"JEANNINE":d -> "MARISE":nom;
-	"MARISE" [label = "{{<nom> MARISE | <bal> 0 } | { <g> | <d>}}"];
-	"MARISE" [label = "{{<nom> MARISE | <bal> 0 }| { <g> NULL | <d> NULL}}"];
+	"ABDELKADER" [label = "{{<nom> ABDELKADER | <bal> -1 } | { <g> | <d>}}"];
+	"ABDELKADER":g -> "ABDEL-HAMID":nom;
+	"ABDEL-HAMID" [label = "{{<nom> ABDEL-HAMID | <bal> 0 } | { <g> | <d>}}"];
+	"ABDEL-HAMID" [label = "{{<nom> ABDEL-HAMID | <bal> 0 }| { <g> NULL | <d> NULL}}"];
+	"ABDELKADER":d -> "ABDELKRIM":nom;
+	"ABDELKRIM" [label = "{{<nom> ABDELKRIM | <bal> -1 } | { <g> | <d>}}"];
+	"ABDELKRIM" [label = "{{<nom> ABDELKRIM | <bal> -1 }| { <g> NULL | <d> }}"];
+	"ABDELKRIM":d -> "ABEL":nom;
+	"ABEL" [label = "{{<nom> ABEL | <bal> 0 } | { <g> | <d>}}"];
+	"ABEL" [label = "{{<nom> ABEL | <bal> 0 }| { <g> NULL | <d> NULL}}"];
 }

@@ -10,7 +10,7 @@
 \usepackage{engrec,titlesec,lipsum,xcolor}
 \usepackage{fancybox}
 \usepackage[skins, most]{tcolorbox}
-\usepackage[bookmarks={true},bookmarksopen={true}, hidelinks, pdftitle={APP - Fil rouge}, pdfauthor={APProximatif}, pdfsubject={Arbres équilibres AVL}]{hyperref}
+\usepackage[bookmarks={true},bookmarksopen={true}, hidelinks, pdftitle={APP - Fil rouge}, pdfauthor={AAProximation}, pdfsubject={Arbres équilibres AVL}]{hyperref}
 \usepackage{setspace}
 \usepackage{mathabx}
 \usepackage{multicol}
@@ -143,7 +143,7 @@
 
 
 \title{AAP - Fil Rouge :\\ Compte rendu}
-\author{AAPproximatif \\ Maistret James, Thieffry \'Emile, Chevalier Romain, Feng Yanli \&  Hong Yutong}
+\author{AAProximation \\ Maistret James, Thieffry \'Emile, Chevalier Romain, Feng Yanli \&  Hong Yutong}
 \date{\today}
 
 \renewcommand{\thesection}{\arabic{section}}
@@ -161,7 +161,7 @@
 
 \section{Introduction}
 
-Création d'arbre équilibrés en language C, pour le fil rouge d'APP de l'année 21-22. Mise en place de trois programmes, le premier pour créer une image d'un arbre AVL à partir d'une liste de mot, le second pour indexer un dictionnaire dans un arbre AVL dont le tri des mots est basé sur leur signature et le dernier programme, qui repose sur le second, permet de rechercher les anagrammes d'un mot. 
+Le fil rouge d'AAP 21-22, visait la création d'arbre équilibrés en language C. Le fil rouge consistait à mise en place de trois programmes, le premier permet la création d'une image d'un arbre AVL à partir d'une liste de mot. Quant au second programme, il sert à indexer un dictionnaire dans un arbre AVL dont le tri des mots est basé sur leur signature. Enfin le dernier programme, qui repose sur le second, permet de déterminer les anagrammes d'un mot dans un dictionnaire. 
 
 \section{Programme 1: \texttt{displayAVL.exe}}
 \label{sec:prog_1}
@@ -206,7 +206,7 @@ Les fonctions permettant de générer le fichier \texttt{.dot} étaient déjà d
 
 
 \subsection{Jeux de test, exemples d'exécution}
-On trouve en figure~\ref{fig:prog1_1} , les différentes étapes de construction de l'arbre pour 10 premiers mots du fichier \texttt{PrenomsV2.txt}. 
+On trouve en figure~\ref{fig:prog1_1} , les différentes étapes de construction de l'arbre pour 10 premiers mots du fichier \texttt{PrenomsV2.txt}. Un exemple d'arbre à 20 mots du fichier \texttt{PrenomsV1.txt} en figure~\ref{fig:prog1_2}.
 
 \begin{figure}[p]
   
@@ -235,6 +235,7 @@ On trouve en figure~\ref{fig:prog1_1} , les différentes étapes de construction
     \includegraphics[scale=0.36]{Img_prog1/displayAVL_20.eps}
   \end{center}
   \caption{Exemple arbre avec les 20 premiers prénoms de \texttt{PrenomsV1.txt}}
+  \label{fig:prog1_2}
 \end{figure}
 
 \section{Programme 2: \texttt{indexation.exe} \label{sec:prog_2}}
@@ -381,8 +382,32 @@ REAPPARAITRAIENT, REAPPARAITRAIENT\end{lstlisting}
 
 
 
-\section{Gestion de projet}
+\section{Gestion de projet} Dans un premier temps, nous avons tous bien lu le sujet et bien compris les enjeux. Nous avons alors utilisé les séances 4 et 5 pour decomposer le projet en différentes lot (dont on retrouve la décomposition en figure~\ref{fig:WBS}), de se répartir les tâches et commencer le projet tous ensemble. La répartition des tâches se trouve sur la matrice RACI en figure~\ref{fig:RACI} .Cela nous a permis de finir les 2 premiers programmes rapidement. Nous avons aussi été aidé par M. Slim Hammadi, notamment lorsque nous étions bloqué au programme 2, sur la comprehension du sujet d’un point technique. Nous ne comprenions pas exactement ce qu’il fallait mettre dans les maille de l'arbre (entre autres la liste des mots regroupés par signature). Nous avons chacun fini nos tâches à faire pour la rentrée et nous avons alors pu faire une mise en commun de travail et vérifier que tout fonctionne correctement.
+
+
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[scale=0.23]{Img_gdp/WBS.pdf}
+  \end{center}
+  \caption{Work Breakdown Structure- Fil rouge AAProximation}
+  \label{fig:WBS}
+\end{figure}
+
+
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[scale=0.23]{Img_gdp/Matrice-RACI.pdf}
+  \end{center}
+  \caption{Matrice RACI - Fil rouge AAProximation}
+  \label{fig:RACI}
+\end{figure}
+
+
+
+
 \section{Conclusion}
+
+pour conclure, nous pouvons dire que ce projet Fil Rouge a été formateur, il nous a permis de vraiment mieux se familiariser avec le language C et de réaliser un projet de nous même avec avec les différents aspect de la gestion de projet. Nous sommes ravi d’avoir pu faire ce projet, c’était l’occasion de travailler en groupe et de mettre en relation nos connaissances apprises durant ce cursus d'algorithme, ce qui a d’ailleurs considérablement approfondi nos connaissances sur le sujet. 
 
 
 
