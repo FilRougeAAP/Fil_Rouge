@@ -167,7 +167,7 @@ Le fil rouge d'AAP 21-22, visait la création d'arbre équilibrés en language C
 \label{sec:prog_1}
 \subsection{Développement}
 \subsubsection{Fonction de base pour créer l'arbre}
-\paragraph{Rotations simples} Le programme de la rotation simple à droite était donné pour la rotation de gauche, nous avons raisonné par analogie et le calcul des facteur de déséquilibre est donné ci-dessous. En se basant sur la figure~\ref{LeftRot}, on a \( a = h(A_g) - h(A_d), b = h(B_g) - h(A)\) et \(h(A) = 1 +\max (h(A_g), h(A_d)) \) où \(h\) est la hauteur du noeud. Alors 
+\paragraph{Rotations simples} Le programme de la rotation simple à droite était donné pour la rotation de gauche, nous avons raisonné par analogie et le calcul des facteur de déséquilibre est donné ci-dessous. En se basant sur la figure~\ref{LeftRot}, on a \( a = h(A_g) - h(A_d), b = h(B_g) - h(A)\) et \(h(A) = 1 +\max (h(A_g), h(A_d)) \) où \(h(x)\) est la hauteur du noeud \(x\). Alors 
 \begin{align*}
 b' &= h(B_g)-h(A_g) \\
 &= b + h(A) - h(A_g) & \mathrm{en\  utilisant \ la \  définition \  de } \ b  \\
@@ -407,7 +407,7 @@ REAPPARAITRAIENT, REAPPARAITRAIENT\end{lstlisting}
 
 \section{Conclusion}
 
-pour conclure, nous pouvons dire que ce projet Fil Rouge a été formateur, il nous a permis de vraiment mieux se familiariser avec le language C et de réaliser un projet de nous même avec avec les différents aspect de la gestion de projet. Nous sommes ravi d’avoir pu faire ce projet, c’était l’occasion de travailler en groupe et de mettre en relation nos connaissances apprises durant ce cursus d'algorithme, ce qui a d’ailleurs considérablement approfondi nos connaissances sur le sujet. 
+Pour conclure, nous pouvons dire que ce projet Fil Rouge a été formateur, il nous a permis de vraiment mieux se familiariser avec le language C et de réaliser un projet de nous même avec avec les différents aspect de la gestion de projet. Nous sommes ravi d’avoir pu faire ce projet, c’était l’occasion de travailler en groupe et de mettre en relation nos connaissances apprises durant ce cursus d'algorithme, ce qui a d’ailleurs considérablement approfondi nos connaissances sur le sujet. 
 
 
 
@@ -415,6 +415,24 @@ pour conclure, nous pouvons dire que ce projet Fil Rouge a été formateur, il n
 
 \bibliography{bibli}
 \bibliographystyle{plain}
+
+\vspace*{1cm}
+
+\textbf{\LARGE Annexes : code des programmes}
+
+\begin{appendix}
+  \section{Code programme 1: \texttt{displayAVL.exe}}
+  \lstinputlisting[language=C, lastline=179]{../Programme_1/avl.c}
+  \vspace{1cm}
+  \lstinputlisting[language=C]{../Programme_1/displayAVL.c}
+
+  \section{Code programme 2: \texttt{indexation.exe}}
+  \lstinputlisting{../Programme_2/indexation.c}
+
+  \section{Code programme 3: \texttt{anagrammes.exe}}
+  \lstinputlisting{../Programme_3/anagrammes.c}
+\end{appendix}
+
 
 
 \end{document}

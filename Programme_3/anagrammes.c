@@ -103,7 +103,7 @@ int nb_anagramme(T_avl root, int taille_mots, FILE *fp){
             fprintf(fp, "%s\n", root->list_mots); // On ajoute les anagrammes au fichier de stockage
         }
 
-    return compteur + nb_anagramme(root->l, taille_mots, fp) + nb_anagramme(root->r, taille_mots, fp); // Compte le nombre de mots du dictionnaire disposant d’anagrammes
+    return compteur + nb_anagramme(root->l, taille_mots, fp) + nb_anagramme(root->r, taille_mots, fp); // Compte le nombre de mots du dictionnaire disposant d anagrammes
 
     }
 

@@ -29,3 +29,6 @@
 \contentsline {subsection}{\numberline {4.2}Jeux de test, exemples d'exécution}{6}{subsection.4.2}%
 \contentsline {section}{\numberline {5}Gestion de projet}{7}{section.5}%
 \contentsline {section}{\numberline {6}Conclusion}{8}{section.6}%
+\contentsline {section}{\numberline {A}Code programme 1: \texttt {displayAVL.exe}}{8}{appendix.A}%
+\contentsline {section}{\numberline {B}Code programme 2: \texttt {indexation.exe}}{11}{appendix.B}%
+\contentsline {section}{\numberline {C}Code programme 3: \texttt {anagrammes.exe}}{13}{appendix.C}%

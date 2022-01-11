@@ -73,7 +73,7 @@ int	insertAVL (T_avlNode ** pRoot, T_elt e) {
 
 	if (deltaH == 0)
 		return 0; // pas de modification de hauteur : on renvoie 0
-	else		  // le sous-arbre renvoyé par l’appel récursif a grandi
+	else		  // le sous-arbre renvoyé par l appel récursif a grandi
 	{
 		*pRoot = balanceAVL(*pRoot); // on rééquilibre
 	}
@@ -163,6 +163,21 @@ static T_avlNode *balanceAVL(T_avlNode *A)
 	return NULL;
 }
 
+
+void freeAVL(T_avl root)
+{
+	// Libérer la mémoire de toutes les mailles de l'arbre
+
+	if (root != NULL)
+	{
+		freeAVL(root->r);
+		freeAVL(root->l);
+		// printf("Libération de %s\n", root->list_mots);
+		free(root);
+	}
+}
+
+
 // IDEM pour ABR 
 
 void printAVL(T_avl root, int indent) {
@@ -185,21 +200,6 @@ void printAVL(T_avl root, int indent) {
 	}
 }
 
-
-void freeAVL(T_avl root)
-{
-	// Libérer la mémoire de toutes les mailles de l'arbre
-
-	if (root != NULL)
-	{
-		freeAVL(root->r);
-		freeAVL(root->l);
-		// printf("Libération de %s\n", root->list_mots);
-		free(root);
-	}
-}
-
-
 int heightAVL(T_avl root){
 	// hauteur d'un arbre 
 	int l,r; 
@@ -210,6 +210,7 @@ int heightAVL(T_avl root){
 
 	return 1+ ((l >= r) ? l : r); 
 }
+
 
 int nbNodesAVL(T_avl root){
 	// nb de noeuds d'un arbre (y compris les feuilles) 
